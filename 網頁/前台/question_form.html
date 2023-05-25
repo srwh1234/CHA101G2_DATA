@@ -36,7 +36,9 @@
     <!-- custom css -->
     <link href="css/fontawesome-all.css" rel="stylesheet" />
     <!-- fontawesome css -->
-    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="css/question_form.css">
+    <!-- question_form css -->
+
     <!-- //css files -->
 
     <!-- google fonts -->
@@ -53,38 +55,7 @@
     <link rel="shortcut icon" href="./images/icon.png" />
     <link rel="bookmark" href="./images/icon.png" />
 
-    <style>
-      .container-2 {
-        max-width: 500px;
-        margin: 0 auto;
-        padding-top: 50px;
-      }
-      .form-container {
-        padding: 20px;
-        border: 1px solid #e9ecef;
-        border-radius: 5px;
-        margin-bottom: 50px;
-      }
-      .form-control {
-        border-radius: 0;
-        margin-bottom: 20px;
-      }
-      .submit-btn {
-        border-radius: 0;
-        width: 50%;
-        display: block;
-        margin: 0 auto;
-      }
-      h2.text-center {
-        margin-bottom: 40px;
-      }
-      .form-group label {
-        margin-bottom: 10px;
-      }
-      .form-group textarea {
-        height: 150px;
-      }
-    </style>
+
   </head>
   <body>
     <!-- header -->
@@ -206,6 +177,7 @@
                   class="form-control"
                   id="main"
                   placeholder="請輸入主旨"
+                  required
                 />
               </div>
               <div class="form-group">
@@ -214,11 +186,12 @@
                   class="form-control"
                   id="message"
                   placeholder="請輸入內容"
+                  required
                 ></textarea>
               </div>
               <div class="form-check">
                 <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" /> 我同意規範
+                  <input class="form-check-input" type="checkbox" required/> 我同意規範
                 </label>
               </div>
               <button type="submit" class="submit-btn btn-primary mt-3">
