@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="open-map">Open Map</button>
+  </body>
+  <!--載入 jQuery-->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!--載入 jQuery-->
+  <script>
+    document.getElementById("open-map").addEventListener("click", function () {
+      var address1 = "1600 Amphitheatre Parkway, Mountain View, CA";
+      var address2 = "350 5th Ave, New York, NY";
+
+      var url = "https://www.google.com/maps";
+
+      // 在新視窗中打開 Google 地圖網頁
+      var win = window.open(url, "_blank");
+
+      // 等待地圖網頁載入完成
+      addEventListener("load", function () {
+        // 找到路線規劃按鈕元素
+        var directionsButton = $('[aria-label="路線"]');
+
+        // 如果找到了路線規劃按鈕
+        if (directionsButton) {
+          // 模擬點擊事件
+          directionsButton.click();
+
+          // 找到出發地點輸入框和目的地輸入框元素
+          var originInput = document.querySelector(
+            '[aria-label="選擇起點或點擊地圖…"]'
+          );
+          var destinationInput = document.querySelector(
+            '[aria-label="選擇目的地..."]'
+          );
+
+          // 如果找到了出發地點輸入框和目的地輸入框元素
+          if (originInput && destinationInput) {
+            // 填入地址
+            originInput.value = "台北";
+            destinationInput.value = "高雄";
+          }
+        }
+      });
+    });
+  </script>
+</html>
