@@ -78,7 +78,7 @@
             <li class=""><a href="articles.html">旅遊文章</a></li>
             <li class="booking"><a href="" id="login">登入/註冊</a></li>
             <li class="">
-              <a href="shopping_car.html"
+              <a href="my_favorite.html"
                 ><img src="./images/shoppingCar.svg" alt="" style="width: 2em"
               /></a>
             </li>
@@ -167,7 +167,7 @@
       <div class="col-lg-7 col-md-9 col-sm-12 contact-left-form mx-auto">
         <form id="myForm">
           <div class="form-group mb-3">
-            <label for="destination" class="mb-2">目的地城市或國家：</label>
+            <label for="destination" class="mb-2">*目的地城市或國家：</label>
             <input
               type="text"
               class="form-control"
@@ -177,16 +177,7 @@
             />
           </div>
           <div class="form-group mb-3">
-            <label for="travelDate" class="mb-2">旅行日期：</label>
-            <input
-              type="date"
-              class="form-control"
-              id="travelDate"
-              name="travelDate"
-            />
-          </div>
-          <div class="form-group mb-3">
-            <label for="travelDays" class="mb-2">旅行天數：</label>
+            <label for="travelDays" class="mb-2">*旅行天數：</label>
             <input
               type="number"
               id="travelDays"
@@ -198,20 +189,44 @@
             />
           </div>
           <div class="form-group mb-3">
-            <label for="budgetRange" class="mb-2">預算範圍：</label>
-            <select id="budgetRange" class="form-control" name="budgetRange">
-              <option value="0"></option>
+            <label for="people" class="mb-2">*人數：</label>
+            <input
+              type="number"
+              id="people"
+              name="people"
+              class="form-control"
+              min="1"
+              max="100"
+              required
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label for="budgetRange" class="mb-2">*預算範圍：</label>
+            <select
+              id="budgetRange"
+              class="form-control"
+              name="budgetRange"
+              style="cursor: pointer"
+              required
+            >
+              <option value="0" disabled selected></option>
               <option value="0-5000">0-5000</option>
               <option value="5000-10000">5000-10000</option>
               <option value="10000-20000">10000-20000</option>
               <option value="20000-50000">20000-50000</option>
-              <option value="50000+">50000+</option>
+              <option value="50000-100000">50000-100000</option>
+              <option value="100000+">100000+</option>
             </select>
           </div>
           <div class="form-group mb-3">
             <label for="travelStyle" class="mb-2">偏好旅遊風格：</label>
-            <select id="travelStyle" class="form-control" name="travelStyle">
-              <option value="0" disabled selected>偏好旅遊風格</option>
+            <select
+              id="travelStyle"
+              class="form-control"
+              name="travelStyle"
+              style="cursor: pointer"
+            >
+              <option value="" disabled selected></option>
               <option value="文化探索">文化探索</option>
               <option value="冒險體驗">冒險體驗</option>
               <option value="浪漫之旅">浪漫之旅</option>
@@ -223,179 +238,203 @@
 
           <div class="form-group mb-3">
             <label class="mb-2">偏好旅遊景點：</label><br />
-            <div class="row">
-              <div class="col-sm-3">
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    id="sightseeing1"
-                    name="sightseeing"
-                    value="自然風景"
-                    class="form-check-input"
-                  />
-                  <label for="sightseeing1">自然風景</label>
-                </div>
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    id="sightseeing2"
-                    name="sightseeing"
-                    value="名勝古蹟"
-                    class="form-check-input"
-                  />
-                  <label for="sightseeing2">名勝古蹟</label>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    id="sightseeing3"
-                    name="sightseeing"
-                    value="網美景點"
-                    class="form-check-input"
-                  />
-                  <label for="sightseeing3">網美景點</label>
-                </div>
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    id="sightseeing4"
-                    name="sightseeing"
-                    value="海灘度假"
-                    class="form-check-input"
-                  />
-                  <label for="sightseeing4">海灘度假</label>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    id="sightseeing5"
-                    name="sightseeing"
-                    value="休閒農場"
-                    class="form-check-input"
-                  />
-                  <label for="sightseeing5">休閒農場</label>
-                </div>
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    id="sightseeing6"
-                    name="sightseeing"
-                    value="當地特色景點"
-                    class="form-check-input"
-                  />
-                  <label for="sightseeing6">當地特色景點</label>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    id="sightseeing7"
-                    name="sightseeing"
-                    value="樂園主題公園"
-                    class="form-check-input"
-                  />
-                  <label for="sightseeing7">樂園主題公園</label>
+            <div class="accordion-item">
+              <input
+                class="form-control select-input collapsed"
+                type="text"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-controls="collapseOne"
+                style="border: none; cursor: pointer"
+              />
+              <div
+                id="collapseOne"
+                class="accordion-collapse collapse collapsed"
+                aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="sightseeing1"
+                      name="sightseeing"
+                      value="自然風景"
+                      class="form-check-input"
+                    />
+                    <label for="sightseeing1">自然風景</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="sightseeing2"
+                      name="sightseeing"
+                      value="名勝古蹟"
+                      class="form-check-input"
+                    />
+                    <label for="sightseeing2">名勝古蹟</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="sightseeing3"
+                      name="sightseeing"
+                      value="網美景點"
+                      class="form-check-input"
+                    />
+                    <label for="sightseeing3">網美景點</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="sightseeing4"
+                      name="sightseeing"
+                      value="海灘度假"
+                      class="form-check-input"
+                    />
+                    <label for="sightseeing4">海灘度假</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="sightseeing5"
+                      name="sightseeing"
+                      value="休閒農場"
+                      class="form-check-input"
+                    />
+                    <label for="sightseeing5">休閒農場</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="sightseeing6"
+                      name="sightseeing"
+                      value="當地特色景點"
+                      class="form-check-input"
+                    />
+                    <label for="sightseeing6">當地特色景點</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="sightseeing7"
+                      name="sightseeing"
+                      value="樂園主題公園"
+                      class="form-check-input"
+                    />
+                    <label for="sightseeing7">樂園主題公園</label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <!-- TODO:偏好旅遊活動 -->
           <div class="form-group mb-3">
             <label class="mb-2">偏好旅遊活動：</label><br />
-            <div class="row">
-              <div class="col-sm-3">
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    id="activities1"
-                    name="activities"
-                    value="登山健行"
-                    class="form-check-input"
-                  />
-                  <label for="activities1">登山健行</label>
-                </div>
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    id="activities2"
-                    name="activities"
-                    value="水上活動"
-                    class="form-check-input"
-                  />
-                  <label for="activities2">水上活動</label>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    id="activities3"
-                    name="activities"
-                    value="空中活動"
-                    class="form-check-input"
-                  />
-                  <label for="activities3">空中活動</label>
-                </div>
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    id="activities4"
-                    name="activities"
-                    value="文化體驗"
-                    class="form-check-input"
-                  />
-                  <label for="activities4">文化體驗</label>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    id="activities5"
-                    name="activities"
-                    value="美食品嚐"
-                    class="form-check-input"
-                  />
-                  <label for="activities5">美食品嚐</label>
-                </div>
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    id="activities6"
-                    name="activities"
-                    value="購物體驗"
-                    class="form-check-input"
-                  />
-                  <label for="activities6">購物體驗</label>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="form-check">
-                  <input
-                    type="checkbox"
-                    id="activities7"
-                    name="activities"
-                    value="極限運動"
-                    class="form-check-input"
-                  />
-                  <label for="activities7">極限運動</label>
+            <div class="accordion-item">
+              <input
+                class="form-control select-input2 collapsed"
+                type="text"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="true"
+                aria-controls="collapseTwo"
+                style="border: none; cursor: pointer"
+              />
+
+              <div
+                id="collapseTwo"
+                class="accordion-collapse collapse collapsed"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="activities1"
+                      name="activities"
+                      value="登山健行"
+                      class="form-check-input"
+                    />
+                    <label for="activities1">登山健行</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="activities2"
+                      name="activities"
+                      value="水上活動"
+                      class="form-check-input"
+                    />
+                    <label for="activities2">水上活動</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="activities3"
+                      name="activities"
+                      value="空中活動"
+                      class="form-check-input"
+                    />
+                    <label for="activities3">空中活動</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="activities4"
+                      name="activities"
+                      value="文化體驗"
+                      class="form-check-input"
+                    />
+                    <label for="activities4">文化體驗</label>
+                  </div>
+
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="activities5"
+                      name="activities"
+                      value="美食品嚐"
+                      class="form-check-input"
+                    />
+                    <label for="activities5">美食品嚐</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="activities6"
+                      name="activities"
+                      value="購物體驗"
+                      class="form-check-input"
+                    />
+                    <label for="activities6">購物體驗</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="activities7"
+                      name="activities"
+                      value="極限運動"
+                      class="form-check-input"
+                    />
+                    <label for="activities7">極限運動</label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <!-- TODO:偏好旅遊活動 -->
           <div class="form-group mb-3">
             <label for="message" class="mb-2">其他需求：</label>
             <textarea
               class="form-control"
               id="message"
               name="message"
-              maxlength="50"
+              maxlength="100"
               rows="3"
               style="resize: none"
+              value=""
             ></textarea>
           </div>
           <div class="d-grid gap-2 mt-2">
@@ -531,11 +570,14 @@
     </div>
     <!-- move top -->
 
+    <!-- 載入bootstrap js -->
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <!--載入 jQuery-->
+    <script src="/js/jquery-3.6.4.min.js"></script>
+
     <!-- 載入booking 處理 -->
     <script src="./js/booking.js"></script>
 
-    <!--載入 jQuery-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- 載入axios -->
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
   </body>
