@@ -157,3 +157,95 @@ function generateGroupOrderItem(groupOrder) {
       `;
 }
 
+// 設定點擊AI行程規劃
+$(".nav-item")
+    .eq(3) // 選第四個
+    .on("click", function () {
+      $(".tab-pane").eq(3).addClass("show active"); // 顯示
+      // 呼叫這個顯示行程卡片列表
+      getAiFavorite();
+    });
+
+// 接收後台AI行程資料
+console.log(memberId);
+function getAiFavorite() {
+  $.ajax({
+    url: "/getAiFavorite/" + memberId,
+    method: "GET",
+    dataType: "json",
+    success: function (aiFavorite) {
+      console.log("接收資料");
+      console.log(aiFavorite);
+
+      for (let i = 0; i < aiFavorite.length; i++) {
+        $(".tab-pane").eq(3).find("#group_orderselect")
+            .after(`<div class="group_order_item_class">
+          <div class="card-header">
+            <div class="card-top">
+              <h5 class="text-center">
+                  <h5>${aiFavorite[i].destination}${aiFavorite[i].travelDays}日遊</h5>
+              </h5>
+            </div>
+          </div>
+          <div class="card-body card-down">
+            <p>
+              <i class="fa-solid fa-person"></i>
+              人數：${aiFavorite[i].people}
+            </p>
+            <p>
+              <i class="fa-solid fa-dollar-sign"></i>
+              預算範圍：${aiFavorite[i].budgetRange}
+            </p>
+            <p>
+              <i class="fa-brands fa-fly"></i>
+              旅遊風格：${aiFavorite[i].preferredStyle}
+           </p>
+           <p>
+            <i class="fa-solid fa-location-dot"></i> 路線連結：<a
+             href="${aiFavorite[i].route}"
+             >${aiFavorite[i].destination}${aiFavorite[i].travelDays}日遊路線連結</a
+            >
+          </p>
+            <p class="ai_description"><i class="fa-solid fa-file-lines"></i> 行程內容：<br>${aiFavorite[i].planningDescription}</p>
+          </div>
+        </div>`);
+      }
+    },
+    error: function (error) {
+      console.log(error);
+    },
+  });
+}
+
+
+// 設定卡片展開與關閉
+$(document).on("click", ".group_order_item_class", function () {
+  var container = $(this);
+  var content = container.find(".card-body");
+
+  if (container.hasClass("expanded")) {
+    // 容器已展開，收起内容並恢復原始高度
+    container.removeClass("expanded");
+    content.addClass("card-down");
+
+    // 計算原始高度
+    var originalHeight = container.data("originalHeight");
+
+    // 恢復原始高度
+    container.animate({ height: originalHeight }, 500);
+  } else {
+    // 容器未展開，展開内容並增加高度
+    container.addClass("expanded");
+    content.removeClass("card-down");
+
+    // 計算完整高度
+    var fullHeight = content.outerHeight() + 100;
+
+    // 保存原始高度
+    container.data("originalHeight", container.height());
+
+    // 增加高度以適應內容
+    container.animate({ height: fullHeight }, 500);
+  }
+});
+
