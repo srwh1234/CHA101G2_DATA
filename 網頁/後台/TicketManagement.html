@@ -21,6 +21,30 @@
     <script src="login.js"></script>
     <!-- 自訂樣式 -->
     <link href="css/TripLight.min.css" rel="stylesheet">
+
+   
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- 使用Summernote -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote/dist/summernote-bs4.css" rel="stylesheet">
+
+   
+    <style>
+        .note-color .note-dropdown-menu {
+            width: 30vw !important;
+        }
+
+        .note-toolbar {
+            padding-left: 80px !important;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
 </head>
 
 <body id="page-top" style="overflow-y: scroll;">
@@ -191,27 +215,617 @@
                     </ul>
                 </nav>
 
-                <h1>待補充</h1>
-
-                <!-- Bootstrap 核心 JavaScript -->
-                <script src="vendor/jquery/jquery.min.js"></script>
-                <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-                <!-- 核心插件 JavaScript -->
-                <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-                <!-- 自訂腳本，適用於所有頁面 -->
-                <script src="js/TripLight-2.min.js"></script>
-
-                <!-- 頁面級別的插件 -->
-                <script src="vendor/chart.js/Chart.min.js"></script>
-
-                <!-- 頁面級別的自訂腳本 -->
-                <script src="js/demo/chart-area-demo.js"></script>
-                <script src="js/demo/chart-pie-demo.js"></script>
-                <script src="path/to/jquery.min.js"></script>
+                <div class="container-fluid mt-3">
+                    <ul class="nav nav-tabs mt-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#tabPage1"
+                                data-bs-toggle="tab">票券清單</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tabPage2" data-bs-toggle="tab">票券類型</a>
+                        </li>
 
 
+                    </ul>
+                    <div class="tab-content border border-top-0 mb-3">
+
+                        <!-- 票券清單 -->
+                        <div class="tab-pane fade show active" id="tabPage1">
+
+                            <div class="row">
+
+                                <div class="row my-5 mx-1">
+                                    <div class="col-12 col-lg-4">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="關鍵字搜尋">
+                                            <button class="btn btn-primary">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-4">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#addTicketModal">
+                                            新增票券
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 第一排 -->
+                            <div class="table-responsive p-3" id="ticketContainer">
+                                <table class="table" data-toggle="table">
+
+                                    <thead>
+                                        <tr>
+                                            <th data-field="ticket_id">編號</th>
+                                            <th data-field="ticket_name">名稱</th>
+                                            <th data-field="ticket_type">類型</th>
+                                            <th data-field="ticket_city">縣市</th>
+                                            <th data-field="supplier_name">供應商名稱</th>
+                                            <th data-field="available">可買數量</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <!-- 內容給JS填 -->
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- 最下排 -->
+                            <div class="d-flex justify-content-center align-items-center my-3" id="orderPagination">
+                                <ul class="pagination gap-2">
+                                    <!-- 內容給JS填 -->
+                                </ul>
+                            </div>
+
+                            <!-- 稱高度用的 -->
+                            <div style="height:30vh"></div>
+                        </div>
+
+                        <!-- 票券種類 -->
+                        <div class="tab-pane fade" id="tabPage2">
+                            222
+                            <!-- 稱高度用的 -->
+                            <div style="height:30vh"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 新增的燈箱 -->
+                <div class="modal fade" id="addTicketModal" data-bs-backdrop="static" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">新增票券</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row m-5">
+                                    <div class="col-12">
+
+                                        <!-- Row-1 -->
+                                        <div class="row">
+                                            <!-- Column-1 -->
+                                            <div class="col-12 col-lg-4 p-3">
+                                                <div class="form-floating mb-3">
+                                                    <select class="form-select" id="ticketType">
+                                                        <!-- 內容給JS填 -->
+                                                    </select>
+                                                    <label class="text-danger" for="ticketType">票券類型</label>
+                                                </div>
+                                                <div class="form-floating mb-3">
+                                                    <input type="date" class="form-control" id="ticketExpiryDate"
+                                                        placeholder=".">
+                                                    <label class="text-danger" for="ticketExpiryDate">到期日期</label>
+                                                </div>
+                                            </div>
+                                            <!-- Column-2 -->
+                                            <div class="col-12 col-lg-4 p-3">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" class="form-control" id="ticketName"
+                                                        placeholder=".">
+                                                    <label class="text-danger" for="ticketName">票券名稱</label>
+                                                </div>
+                                                <div class="form-floating mb-3">
+                                                    <input type="number" class="form-control" id="ticketPrice" min=1
+                                                        placeholder=".">
+                                                    <label class="text-danger" for="ticketPrice">票券價格</label>
+                                                </div>
+                                            </div>
+                                            <!-- Column-3 -->
+                                            <div class="col-12 col-lg-4 p-3">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" class="form-control" id="ticketSupplier"
+                                                        placeholder=".">
+                                                    <label class="text-danger" for="ticketSupplier">票券供應商</label>
+                                                </div>
+                                                <div class="form-floating mb-3">
+                                                    <input type="number" class="form-control" id="ticketCount" min=1
+                                                        placeholder=".">
+                                                    <label class="text-danger" for="ticketCount">票券數量</label>
+                                                </div>
+                                                <div class="form-floating mb-3">
+                                                    <input type="number" class="form-control" id="ticketRating" min=1
+                                                        max=5 placeholder=".">
+                                                    <label class="text-danger" for="ticketRating">評價分數</label>
+                                                </div>
+                                                <div class="form-floating mb-3">
+                                                    <input type="number" class="form-control" id="ticketRatingCount"
+                                                        min=1 placeholder=".">
+                                                    <label class="text-danger" for="ticketRatingCount">評價人數</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Row-2 -->
+                                        <div class="row">
+                                            <div class="col-12 col-lg-4 mb-5">
+                                                <div class="form-floating mb-3">
+                                                    <select class="form-select" id="ticketCity">
+                                                        <!-- 內容給JS填 -->
+                                                    </select>
+                                                    <label class="text-danger" for="ticketCity">使用縣市</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-lg-8 mb-5">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" class="form-control" id="ticketAddress"
+                                                        placeholder=".">
+                                                    <label class="text-danger" for="ticketAddress">使用地址</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-lg-6">
+                                                <!-- 編輯器區域 -->
+                                                <div class="form-floating mb-3">
+                                                    <div class="form-control" id="descEditor"></div>
+                                                    <label class="text-danger" for="descEditor">票券描述</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-lg-6">
+                                                <!-- 編輯器區域 -->
+                                                <div class="form-floating mb-3">
+                                                    <div class="form-control" id="noteEditor"></div>
+                                                    <label class="text-danger" for="noteEditor">特別說明</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 圖片區 -->
+                                <div class="row justify-content-center m-3">
+                                    <div class="col-12 col-lg-6">
+                                        <label class="form-label" for="ticketImage">上傳圖片</label>
+                                        <input type="file" class="form-control" id="ticketImage" multiple>
+                                    </div>
+                                </div>
+                                <!-- 一行5個卡片 -->
+                                <div class="row row-cols-1 row-cols-lg-5 g-2 mb-5" id="imgPreview">
+                                    <!-- 顯示區 -->
+                                </div>
+
+                                <div class="row my-5">
+                                    <div class="col-12 col-lg-12 text-center">
+                                        <button class="btn btn-primary" id="ticketSubmit">新增</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 編輯的燈箱 -->
+                <div class="modal fade" id="editTicketModal" data-bs-backdrop="static" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">編輯票券</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="row m-5">
+                                    <div class="col-12">
+
+                                        <!-- Row-1 -->
+                                        <div class="row">
+                                            <!-- Column-1 -->
+                                            <div class="col-12 col-lg-4 p-3">
+                                                <div class="form-floating mb-3">
+                                                    <select class="form-select" id="editTicketType">
+                                                        <!-- 內容給JS填 -->
+                                                    </select>
+                                                    <label class="text-danger" for="editTicketType">票券類型</label>
+                                                </div>
+                                                <div class="form-floating mb-3">
+                                                    <input type="date" class="form-control" id="editTicketExpiryDate"
+                                                        placeholder=".">
+                                                    <label class="text-danger" for="editTicketExpiryDate">到期日期</label>
+                                                </div>
+                                            </div>
+                                            <!-- Column-2 -->
+                                            <div class="col-12 col-lg-4 p-3">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" class="form-control" id="editTicketName"
+                                                        placeholder=".">
+                                                    <label class="text-danger" for="editTicketName">票券名稱</label>
+                                                </div>
+                                                <div class="form-floating mb-3">
+                                                    <input type="number" class="form-control" id="editTicketPrice" min=1
+                                                        placeholder=".">
+                                                    <label class="text-danger" for="editTicketPrice">票券價格</label>
+                                                </div>
+                                            </div>
+                                            <!-- Column-3 -->
+                                            <div class="col-12 col-lg-4 p-3">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" class="form-control" id="editTicketSupplier"
+                                                        placeholder=".">
+                                                    <label class="text-danger" for="editTicketSupplier">票券供應商</label>
+                                                </div>
+                                                <div class="form-floating mb-3">
+                                                    <input type="number" class="form-control" id="editTicketCount" min=1
+                                                        placeholder=".">
+                                                    <label class="text-danger" for="editTicketCount">增加數量</label>
+                                                </div>
+                                                <div class="form-floating mb-3">
+                                                    <input type="number" class="form-control" id="editTicketRating"
+                                                        min=1 max=5 placeholder=".">
+                                                    <label class="text-danger" for="editTicketRating">評價分數</label>
+                                                </div>
+                                                <div class="form-floating mb-3">
+                                                    <input type="number" class="form-control" id="editTicketRatingCount"
+                                                        min=1 placeholder=".">
+                                                    <label class="text-danger" for="editTicketRatingCount">評價人數</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Row-2 -->
+                                        <div class="row">
+                                            <div class="col-12 col-lg-4 mb-5">
+                                                <div class="form-floating mb-3">
+                                                    <select class="form-select" id="editTicketCity">
+                                                        <!-- 內容給JS填 -->
+                                                    </select>
+                                                    <label class="text-danger" for="editTicketCity">使用縣市</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-lg-8 mb-5">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" class="form-control" id="editTicketAddress"
+                                                        placeholder=".">
+                                                    <label class="text-danger" for="editTicketAddress">使用地址</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-lg-6">
+                                                <!-- 編輯器區域 -->
+                                                <div class="form-floating mb-3">
+                                                    <div class="form-control" id="editDescEditor"></div>
+                                                    <label class="text-danger" for="editDescEditor">票券描述</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-lg-6">
+                                                <!-- 編輯器區域 -->
+                                                <div class="form-floating mb-3">
+                                                    <div class="form-control" id="editNoteEditor"></div>
+                                                    <label class="text-danger" for="editNoteEditor">特別說明</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 圖片區 -->
+                                <div class="row justify-content-center m-3">
+                                    <div class="col-12 col-lg-6">
+                                        <label class="form-label" for="editTicketImage">上傳圖片</label>
+                                        <input type="file" class="form-control" id="editTicketImage" multiple>
+                                    </div>
+                                </div>
+                                <!-- 一行5個卡片 -->
+                                <div class="row row-cols-1 row-cols-lg-5 g-2 mb-5" id="editImgPreview">
+                                    <!-- 顯示區 -->
+                                </div>
+
+                                <div class="row my-5">
+                                    <div class="col-12 col-lg-12 text-center">
+                                        <button class="btn btn-primary" id="editTicketSubmit">編輯</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- Bootstrap 核心 JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- 核心插件 JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- 自訂腳本，適用於所有頁面 -->
+    <script src="js/TripLight-2.min.js"></script>
+
+    <!-- 頁面級別的插件 -->
+    <!-- <script src="vendor/chart.js/Chart.min.js"></script> -->
+
+    <!-- 頁面級別的自訂腳本 -->
+    <!-- <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script> -->
+
+    <!-- 使用BootStrap--> 
+    <script src="vendor/bootstrap/js/bootstrap.bundle-5.2.3.js"></script>
+    <script src="vendor/summernote/summernote-lite.min.js"></script>
+    <script src="vendor/summernote/summernote-zh-TW.min.js"></script>
+
+    <script>
+
+        $(function () {
+
+            //編輯票券的參數傳遞
+            $('#editTicketModal').on('show.bs.modal', function (event) {
+                const button = $(event.relatedTarget);
+                const ticketId = button.data('bs-whatever');
+
+                //假資料 以後要從資料庫取得
+                const ticket = {
+                    ticketId: 0,
+                    ticketType: '票券類型',
+                    name: '緯育Tibame 後端工程師門票',
+                    price: 107000,
+                    available: 10, //可買數量
+                    totalSales: 100,
+                    description: '票券描述<br>第2行<br>第3行<br>第4行<br>第5行',
+                    content: '票券說明<br>第2行<br>第3行<br>第4行<br>第5行',
+                    note: '注意事項<br>第2行<br>第3行<br>第4行<br>第5行',
+                    supplierName: '供應商名稱',
+                    city: '縣市名',
+                    latitude: '緯度',
+                    longitude: '經度',
+                    rating: 4.5,
+                    ratingPerson: Math.trunc(Math.random() * 1000),
+                    images: [
+                        'https://picsum.photos/800/600/?random=68',
+                        'https://picsum.photos/800/600/?random=69',
+                        'https://picsum.photos/800/600/?random=70',
+                    ],
+                };
+
+                $('#editTicketSubmit').data('ticket-id', ticketId);
+            });
+
+            // tab切換到哪一頁
+            $('a[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
+                var target = $(e.target).attr("href");
+                console.log("Switched to tab " + target);
+            });
+
+            // 浮動標籤的變色
+            $('.form-floating .form-control').on('input', function () {
+                $(this).siblings('label').removeClass('text-danger text-primary');
+                if ($(this).val()) {
+                    $(this).siblings('label').addClass('text-primary');
+                } else {
+                    $(this).siblings('label').addClass('text-danger');
+                }
+            });
+            $('.form-floating .form-select').on('change', function () {
+                $(this).siblings('label').removeClass('text-danger text-primary');
+                if ($(this).val()) {
+                    $(this).siblings('label').addClass('text-primary');
+                } else {
+                    $(this).siblings('label').addClass('text-danger');
+                }
+            });
+
+            // 初始化Summernote編輯器
+            $('#descEditor,#noteEditor,#editDescEditor,#editNoteEditor').summernote(
+                {
+                    height: 300, // 設定編輯器高度
+                    placeholder: '請輸入內容', // 設定編輯器預設文字
+                    toolbar: [
+                        ['style', ['style']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['color', ['color']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['table', ['table']],
+                        ['insert', ['link', 'picture', 'video']],
+                        ['view', ['fullscreen', 'codeview']]
+                    ], // 設定編輯器工具列
+                    lang: 'zh-TW',
+                }
+            );
+            // 輸入文字事件處理
+            $('#descEditor,#noteEditor,#editDescEditor,#editNoteEditor').on('summernote.keyup', function (we, e) {
+                $(this).siblings('label').removeClass('text-danger text-primary');
+                // 如何取得不含標籤的內容 待研究
+                if ($.trim($(this).summernote('code')).replace('<p><br></p>', '')) {
+                    $(this).siblings('label').addClass('text-primary');
+                } else {
+                    $(this).siblings('label').addClass('text-danger');
+                }
+            });
+
+            //選擇圖片並預覽
+            $('#ticketImage').on('change', function (e) {
+
+                if (!e.target.files) {
+                    return false;
+                }
+                for (let file of e.target.files) {
+                    const reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.onload = function (e) {
+
+                        $('#imgPreview')[0].innerHTML += `
+                          <div class="col p-3 img-item">
+                              <div class="card h-100">
+                                  <div class="">
+                                      <img src="${e.target.result}" class="img-fluid rounded-start img-upload">
+                                  </div>
+                                  <div class="card-body d-flex justify-content-around">
+                                      <button class="btn btn-outline-dark img-search" 
+                                              href="#" 
+                                              data-bs-toggle="modal" 
+                                              data-bs-target="#imgModal"><i class="bi bi-search"></i></button>
+                                      <button class="btn btn-outline-dark img-trash"><i class="bi bi-trash"></i></button>
+                                  </div>
+                              </div>
+                          </div>
+                      `;
+                    }
+                }
+            });
+
+
+            // 設定 只要是.img-trash的點擊事件委派
+            $(document).on('click', '.img-trash', function () {
+                $(this).closest('.img-item').remove();
+            });
+
+
+
+            $('#ticketSubmit').on('click', function () {
+                const result = {
+                    ticketType: $('#ticketType').val(),
+                    ticketSupplier: $('#ticketSupplier').val(),
+                    ticketExpiryDate: $('#ticketExpiryDate').val(),
+                    ticketName: $('#ticketName').val(),
+                    ticketPrice: $('#ticketPrice').val(),
+                    ticketCount: $('#ticketCount').val(),
+                    ticketRating: $('#ticketRating').val(),
+                    ticketAddress: $('#ticketAddress').val(),
+                    descEditor: $.trim($('#descEditor').summernote('code')),
+                    noteEditor: $.trim($('#noteEditor').summernote('code')),
+                    // 從'.img-upload' 取得每個src的值並轉成陣列
+                    imgArray: $('.img-upload').map((i, v) => $(v).attr('src')).get(),
+                };
+
+                console.log(result);
+            });
+
+
+            //渲染頁面
+            render();
+            render_cities();
+            render_types();
+        });
+
+        const locationTypes = [
+            '主題樂園', '景點門票', '水族館 & 動物園', '博物館 & 美術館', '歷史景點'
+        ];
+        const taiwanCities = [
+            "基隆市", "台北市", "新北市", "桃園市", "新竹市", "新竹縣", "苗栗縣",
+            "台中市", "彰化縣", "南投縣", "雲林縣", "嘉義市", "嘉義縣", "台南市",
+            "高雄市", "屏東縣", "台東縣", "花蓮縣", "宜蘭縣", "澎湖縣", "金門縣", "連江縣"
+        ];
+        //假資料
+        const result = {
+            curPage: 1,
+            totalPage: 10,
+            tickets: []
+        };
+
+        // 票券類型
+        function render_types() {
+            $('#ticketType').html('<option selected disabled>--</option>');
+            $('#editTicketType').html('<option selected disabled>--</option>');
+
+            // 1 2 4 8 16 32
+            locationTypes.forEach((v, i) => {
+                $('#ticketType').append(`<option value="${2 ** i}">${v}</option>`);
+                $('#editTicketType').append(`<option value="${2 ** i}">${v}</option>`);
+            });
+        }
+
+        // 縣市
+        function render_cities() {
+            $('#ticketCity').html('<option selected disabled>--</option>');
+            $('#editTicketCity').html('<option selected disabled>--</option>');
+
+            // 1 2 4 8 16 32
+            taiwanCities.forEach((v, i) => {
+                $('#ticketCity').append(`<option value="${2 ** i}">${v}</option>`);
+                $('#editTicketCity').append(`<option value="${2 ** i}">${v}</option>`);
+            });
+        }
+
+        function render() {
+
+            for (let i = 5; i < 15; i++) {
+                const ticket = {
+                    ticketId: i,
+                    ticketName: `票券的名稱#${i}`,
+                    ticketType: '票券類型',
+                    ticketCity: '縣市',
+                    supplierName: 'KKDay',
+                    available: 10, //可買數量
+                };
+                result.tickets.push(ticket);
+            }
+            $('#ticketContainer table tbody').html('');
+
+            for (let ticket of result.tickets) {
+                $('#ticketContainer table tbody').append(
+                    `
+                  <tr>
+                    <td class="ticket_id">${ticket.ticketId}</td>
+                    <td class="ticket_name">${ticket.ticketName}</td>
+                    <td class="ticket_type">${ticket.ticketType}</td>
+                    <td class="ticket_city">${ticket.ticketCity}</td>
+                    <td class="supplier_name">${ticket.supplierName}</td>
+                    <td class="available">${ticket.available}</td>
+                    <td>
+                      <button class="btn btn-sm btn-primary open-modal" type="button" data-bs-toggle="modal"
+                        data-bs-target="#editTicketModal" data-bs-whatever="${ticket.ticketId}">編輯</button>
+                    </td>
+                  </tr>
+              `
+                );
+            }
+            // 最底下的分頁
+            $('#orderPagination ul').html('');
+
+            if (result.totalPage > 1) {
+                $('#orderPagination ul').append(
+                    `
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span>&laquo;</span>
+                </a>
+              </li>
+              `
+                );
+                for (let i = 1; i <= result.totalPage; i++) {
+                    $('#orderPagination ul').append(
+                        `         
+                    <li class="page-item"><a class="page-link ${i == result.curPage ? 'active' : ''}" href="#">${i}</a></li>
+                `
+                    );
+                }
+                $('#orderPagination ul').append(
+                    `                    
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span>&raquo;</span>
+                </a>
+              </li>
+              `
+                );
+            }
+        }
+
+    </script>
 </body>
 
 </html>
