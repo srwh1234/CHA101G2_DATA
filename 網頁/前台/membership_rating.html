@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 
 <head>
-    <title>TripLight | Coupon</title>
+    <title>TripLight | Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
     <!-- 關鍵字設定 -->
@@ -43,6 +43,9 @@
     <!-- 載入icon -->
     <link rel="shortcut icon" href="./images/icon.png" />
     <link rel="bookmark" href="./images/icon.png" />
+    <!--會員登入-->
+    <link href="css/login.css" rel="stylesheet" />
+    <link href="css/membership_rating.css" rel="stylesheet" />
     <!--jQuery-->
     <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -50,10 +53,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
-    <!--會員登入-->
-    <link href="css/login.css" rel="stylesheet" />
-    <link href="css/coupon.css" rel="stylesheet" />
-
 </head>
 
 <body>
@@ -221,70 +220,84 @@
                     </ul>
                 </div>
             </div>
-
             <!-- 右邊會員資料 -->
             <div class="col-9">
 
                 <div class="card">
-                    <div class="h3 m-3">優惠碼</div>
-                    <div id="enter_div">
-                        <input type="text" id="enter_coupon" placeholder="請輸入優惠碼">
-                        <button type="button" class="btn btn-secondary">兌換</button>
-                    </div>
-
-                    <ul class="nav nav-tabs mt-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#useable" data-bs-toggle="tab">可使用</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#used" data-bs-toggle="tab">已使用</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#unuseable" data-bs-toggle="tab">無法使用</a>
-                        </li>
-                    </ul>
-
-                    <div class="tab-content">
-
-                        <!-- 可使用 -->
-                        <div class="tab-pane fade show active" id="useable">
-                            <div class="flied_div">
-                                <div class="no_coupon_div" id="no_coupon_useable">
-                                    <div class="no_coupon">目前沒有任何折扣券</div>
-                                </div>
-                                <div class="flied">
-                                    <div class="discount">9折</div>
-                                    <div class="discount_content">2023 玩水祭 92 折折扣碼</div>
-                                    <div class="dateline">有效期至：2023-06-30 23:59</div>
-                                </div>
-                                <div class="flied">
-                                    <div class="discount">8折</div>
-                                    <div class="discount_content">233333333</div>
-                                    <div class="dateline">有效期至：2023-06-30 23:59</div>
-                                </div>
-                            </div>
+                    <div class="h3 m-3">會員分級</div>
+                    <section class="packages pt-5">
+                        <div class="container py-lg-4 py-sm-3">
+                            <h2 class="heading text-capitalize text-center">白金會員</h2>
                         </div>
-
-
-                        <!-- 已使用 -->
-                        <div class="tab-pane fade" id="used">
-                            <div class="no_coupon_div" id="no_coupon_used">
-                                <div class="no_coupon">目前沒有任何折扣券</div>
-                            </div>
-                        </div>
-                        <!-- 無法使用分頁 -->
-                        <div class="tab-pane fade" id="unuseable">
-                            <div class="no_coupon_div" id="no_coupon_unuseable">
-                                <div class="no_coupon">目前沒有任何折扣券</div>
-                            </div>
-
+                    </section>
+                    <div id="rating_div">
+                        <p class="text mt-3 mb-3 text-justify" id="rating_div_p">
+                            再消費<span id="total_order">1</span>筆即可升級。
+                        </p>
+                        <i class="fas fa-gem"></i>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
                         </div>
                     </div>
+                    <section class="packages pt-5">
+                        <div class="container py-lg-4 py-sm-3">
+                            <h2 class="heading text-capitalize text-center">會員禮遇</h2>
+                            <p class="text text-justify fw-bolder mt-4" style="font-size: 1.2em">
 
+                            </p>
+                            <p class="text mt-3 mb-3 text-justify">
+
+                            </p>
+                            <p class="text text-justify fw-bolder" style="font-size: 1.2em">
+                                一般會員
+                            </p>
+                            <p class="text mt-3 mb-3 text-justify">
+                                折扣優惠：享受一般產品或服務的折扣優惠。
+                                <br>
+                                最新優惠資訊：接收最新的旅遊優惠資訊和促銷活動通知。
+                                <br>
+                                積分獎勵：參與活動、完成訂單等獲得，可用於兌換獎品或折扣券。
+                            </p>
+                            <p class="text text-justify fw-bolder" style="font-size: 1.2em">
+                                白金會員
+                            </p>
+                            <p class="text mt-3 mb-3 text-justify">
+                                一年內消費滿十筆訂單解鎖
+                                <br>
+                                一般會員的所有禮遇。
+                                <br>
+                                額外折扣：享受額外的旅遊產品或服務折扣。
+                                <br>
+                                優先訂位：優先獲得熱門旅遊行程的訂位權限。
+                                <br>
+                                專屬客服：優先處理客戶服務查詢和問題。
+                                <br>
+                                旅遊保險優惠：享受旅遊保險相關優惠和特殊條款。
+                            </p>
+                            <p class="text text-justify fw-bolder" style="font-size: 1.2em">
+                                鑽石會員
+                            </p>
+                            <p class="text mt-3 mb-3 text-justify">
+                                一年內消費滿二十筆訂單解鎖
+                                <br>
+                                鑽石會員的所有禮遇。
+                                <br>
+                                獨家特惠：獲得鑽石會員專屬的國內旅遊產品或服務特惠價格。
+                                <br>
+                                專屬接送服務：享受專屬的接送服務，如機場接送或酒店接送。
+                                <br>
+                                鑽石會員活動：參與專屬的鑽石會員活動，如特別主題旅遊活動或VIP旅遊聚會。
+                            </p>
+                        </div>
+                    </section>
                 </div>
+
             </div>
         </div>
     </div>
+    </div>
+
 
 
 
@@ -394,6 +407,8 @@
 <!-- login顯示 -->
 <script src="/js/Login.js"></script>
 <!-- 會員首頁 -->
-<script src="/js/member.js"></script>
+<!-- <script src="/js/member.js"></script> -->
+<!-- 會員分級 -->
+<script src="/js/membership_rating.js"></script>
 
 </html>

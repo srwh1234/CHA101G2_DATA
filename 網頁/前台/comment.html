@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 
 <head>
-    <title>TripLight | Coupon</title>
+    <title>TripLight | Comment</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
     <!-- 關鍵字設定 -->
@@ -52,8 +52,7 @@
         crossorigin="anonymous"></script>
     <!--會員登入-->
     <link href="css/login.css" rel="stylesheet" />
-    <link href="css/coupon.css" rel="stylesheet" />
-
+    <link href="css/comment.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -226,61 +225,99 @@
             <div class="col-9">
 
                 <div class="card">
-                    <div class="h3 m-3">優惠碼</div>
-                    <div id="enter_div">
-                        <input type="text" id="enter_coupon" placeholder="請輸入優惠碼">
-                        <button type="button" class="btn btn-secondary">兌換</button>
-                    </div>
+                    <div class="h3 m-3">我的評價</div>
 
                     <ul class="nav nav-tabs mt-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#useable" data-bs-toggle="tab">可使用</a>
+                            <a class="nav-link active" aria-current="page" href="#ticker_order"
+                                data-bs-toggle="tab">票券評價</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#used" data-bs-toggle="tab">已使用</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#unuseable" data-bs-toggle="tab">無法使用</a>
+                            <a class="nav-link" href="#group_order" data-bs-toggle="tab">旅遊團評價</a>
                         </li>
                     </ul>
 
                     <div class="tab-content">
 
-                        <!-- 可使用 -->
-                        <div class="tab-pane fade show active" id="useable">
-                            <div class="flied_div">
-                                <div class="no_coupon_div" id="no_coupon_useable">
-                                    <div class="no_coupon">目前沒有任何折扣券</div>
-                                </div>
-                                <div class="flied">
-                                    <div class="discount">9折</div>
-                                    <div class="discount_content">2023 玩水祭 92 折折扣碼</div>
-                                    <div class="dateline">有效期至：2023-06-30 23:59</div>
-                                </div>
-                                <div class="flied">
-                                    <div class="discount">8折</div>
-                                    <div class="discount_content">233333333</div>
-                                    <div class="dateline">有效期至：2023-06-30 23:59</div>
+                        <!-- 票券訂單<分頁 -->
+                        <div class="tab-pane fade show active" id="ticker_order">
+
+                            <!-- 第一排 -->
+                            <div class="orderselectclass" id="orderselectdiv">
+                                <select id="orderselect">
+                                    <option selected></option>
+                                    <option></option>
+                                </select>
+                                <div class="no_comment_div" id="no_comment_id">
+                                    <div class="no_comment">趕快幫我們評價吧</div>
                                 </div>
                             </div>
-                        </div>
-
-
-                        <!-- 已使用 -->
-                        <div class="tab-pane fade" id="used">
-                            <div class="no_coupon_div" id="no_coupon_used">
-                                <div class="no_coupon">目前沒有任何折扣券</div>
-                            </div>
-                        </div>
-                        <!-- 無法使用分頁 -->
-                        <div class="tab-pane fade" id="unuseable">
-                            <div class="no_coupon_div" id="no_coupon_unuseable">
-                                <div class="no_coupon">目前沒有任何折扣券</div>
-                            </div>
-
                         </div>
                     </div>
 
+
+                    <!--旅遊團訂單分頁 -->
+                    <div class="tab-pane fade" id="group_order">
+
+                        <!-- 第一排 -->
+                        <div class="orderselectclass" id="group_orderselectdiv">
+                            <select id="group_orderselect">
+                                <option selected></option>
+                                <option></option>
+                            </select>
+                        </div>
+                        <!-- <div class="no_comment_div" id="no_comment_id">
+                            <div class="no_comment">趕快幫我們評價吧</div>
+                        </div> -->
+                        <div class="ticket_item_class">
+                            <a href="https://www.kkday.com/zh-tw/product/142053-thredbo-resort-ski-snowboard-day-tour-from-haymarket-parramatta-australia"
+                                class="orderurl">
+                                <div class="item_img_class">
+                                    <img src="https://blog.asiayo.com/wp-content/uploads/67817447_xl-1.jpg"
+                                        class="item_img">
+                                </div>
+                                <div class="item_commend_class">
+                                    <i class="fa-solid fa-pen-to-square">我要評論</i>
+                                </div>
+                                <div class="item_content">
+                                    <h1 class="item_title">票券評論</h1>
+                                    <div class="box">
+                                        <p class="Number">
+                                            簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介
+                                        </p>
+                                    </div>
+                                    <div class="date_div">
+                                        <p class="date">2020/02/02</p>
+                                    </div>
+                                </div>
+
+                            </a>
+                        </div>
+                        <div class="ticket_item_class">
+                            <a href="https://www.kkday.com/zh-tw/product/142053-thredbo-resort-ski-snowboard-day-tour-from-haymarket-parramatta-australia"
+                                class="orderurl">
+                                <div class="item_img_class">
+                                    <img src="https://blog.asiayo.com/wp-content/uploads/67817447_xl-1.jpg"
+                                        class="item_img">
+                                </div>
+                                <div class="item_commend_class">
+                                    <i class="fa-solid fa-pen-to-square">我要評論</i>
+                                </div>
+                                <div class="item_content">
+                                    <h1 class="item_title">票券評論</h1>
+                                    <div class="box">
+                                        <p class="Number">
+                                            簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介
+                                        </p>
+                                    </div>
+                                    <div class="date_div">
+                                        <p class="date">2020/02/02</p>
+                                    </div>
+                                </div>
+
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -394,6 +431,6 @@
 <!-- login顯示 -->
 <script src="/js/Login.js"></script>
 <!-- 會員首頁 -->
-<script src="/js/member.js"></script>
+<script src="/js/comment.js"></script>
 
 </html>

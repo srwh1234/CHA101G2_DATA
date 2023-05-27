@@ -55,20 +55,70 @@
     right: 30px;
 }
 
+.item_commend_class>i {
+    color: gray;
+}
+
 /* 訂單內容 */
+.box {
+    height: 130px;
+    width: 420px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform: translate(0, 10px);
+}
+
 .item_content {
     position: absolute;
     top: 40px;
-    left: 220px;
+    left: 250px;
     cursor: pointer;
 }
 
-.price,
-.realPrice {
-    display: inline-block;
-    margin: 0;
-    top: 100px;
+.date_div {
+    position: relative;
+    top: -20px;
 }
+
+/* 沒有評價背景圖 */
+
+.no_comment_div {
+    flex: 1;
+    margin: 40px 40px;
+    padding: 10px;
+    height: 300px;
+    width: 600px;
+    transform: translate(12%, -10px);
+    background-image: url(https://i.pinimg.com/564x/71/2f/90/712f90a31404cf7b43b37c1e2eb82ce5.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+
+}
+
+.no_comment_div img {
+    filter: brightness(10%) blur(2px);
+    /* 同时应用亮度和模糊效果 */
+}
+
+.no_comment {
+    font-size: 20px;
+    color: gray;
+    transform: translate(37%, 30%);
+}
+
+.no_comment_div.-out {
+    display: none;
+
+}
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 767.98px) {
 

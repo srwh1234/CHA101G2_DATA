@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-/* 會員登入導覽列 */
+/* 右上角會員登入導覽列 */
 header div.container div.member {
     display: none;
 }
@@ -77,13 +77,14 @@ header div.container div.member.-on {
     position: relative;
 }
 
-
-
 /* 小視窗圖式和文字距離 */
 .member_li>a>i,
 .order_content>a>i {
     margin-right: 8px;
 }
+
+/* ================================================ */
+
 
 /* 分頁 */
 a.nav-link {
@@ -96,7 +97,8 @@ a.nav-link:hover {
     color: white;
 }
 
-/* 左邊欄位 */
+/* ================================================ */
+/* 左邊會員欄位 */
 /* 連結 */
 .list-group list-group-flush mt-3 {
     padding: 0px;
@@ -148,6 +150,50 @@ a.nav-link:hover {
     border-bottom: 1px solid rgba(231, 231, 231, 0.847);
 }
 
-/* .list-group:hover {
-    background-color: rgb(191, 47, 47);
+button#camera {
+    border: 1px solid rgba(19, 18, 18, 0.016);
+}
+
+li.list-group-item {
+    cursor: pointer;
+}
+
+ul.list-group :hover {
+    background-color: rgb(201, 216, 216);
+    color: white;
+}
+
+li.list-group-item>a {
+    text-decoration: none;
+    color: black;
+}
+
+/* 帳號分頁 */
+/* .tab-pane.fade {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 } */
+
+.tab-pane.fade>div.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tab-pane.fade>div.row>div.form-group {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.tab-pane.fade>div.row>div.form-group:last-child {
+    margin-right: 0;
+}
+
+
+.tab-pane.fade>div.row>div.d-flex.align-items-end {
+    align-self: flex-end;
+}
+
+#editEmail {
+    width: 100%
+}
