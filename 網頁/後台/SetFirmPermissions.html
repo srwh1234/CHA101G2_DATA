@@ -55,7 +55,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="EmployeeQuety.html">查詢資料</a>
-                        <a class="collapse-item" href="EmployeeRevise.html">修改資料</a>
+                        <a class="collapse-item" href="EmployeeRevise.html">新增資料</a>
                     </div>
                 </div>
             </li>
@@ -115,7 +115,8 @@
                 <div id="collapseWebManagement" class="collapse" aria-labelledby="headingWebManagement"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="TravelArticles.html">旅遊文章</a>
+                        <a class="collapse-item" href="TravelArticles.html">文章管理</a>
+                        <a class="collapse-item" href="ReportAriocles.html">檢舉管理</a>
                     </div>
                 </div>
             </li>
@@ -194,16 +195,14 @@
 
                 <h1>廠商權限設定</h1>
                 <form action="process.php" method="POST">
-                    <label for="employeeId">廠商名稱</label>
+                    <label for="employeeId">廠商</label>
                     <input type="text" id="employeeId" name="employeeId" required><br><br>
-
                     <label for="accessLevel">權限級別</label>
                     <select id="accessLevel" name="accessLevel">
-                        <option value="1">級別1</option>
-                        <option value="2">級別2</option>
-                        <option value="3">級別3</option>
-                        <!-- 根據實際需求添加更多選項 -->
-                    </select><br><br>
+                        <option value="超級管理員">超級管理員</option>
+                        <option value="網頁管理員">網頁管理員</option>
+                        <option value="訂單管理員">訂單管理員</option>
+                    </select>
 
                     <input type="submit" value="保存權限">
                 </form>
