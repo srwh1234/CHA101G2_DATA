@@ -32,6 +32,16 @@
         .my-th-width-sm {
             min-width: 6rem;
         }
+
+        /* 文字灰色 */
+        .my-text-lightgray {
+            color: #ccc;
+        }
+
+        /* 文字水藍 */
+        .my-text-lightblue {
+            color: #26bec9;
+        }
     </style>
 </head>
 
@@ -221,7 +231,7 @@
 
                         <div class="col-12">
 
-                            <div class="table-responsive p-3" id="ticketContainer">
+                            <div class="table-responsive p-3" id="orderContainer">
                                 <table class="table" data-toggle="table">
 
                                     <!-- 訂單編號	總品項	訂購日期	付款方式	優惠券	總金額 -->
@@ -241,24 +251,16 @@
                                     <tbody>
 
                                         <!-- 內容給JS填 -->
-                                        <tr>
-                                            <td class="order_id">1</td>
-                                            <td class="member_id">1</td>
-                                            <td class="member_name">會員名</td>
-                                            <td class="ticket_count">5</td>
-                                            <td class="pay_date">2032-12-21</td>
-                                            <td class="pay_type">信用卡</td>
-                                            <td class="actual_price">16875</td>
-
-
-                                            <td>
-                                                <button class="btn btn-sm btn-primary btn-detail" type="button">明細</button>
-                                            </td>
-                                        </tr>
-
 
                                     </tbody>
                                 </table>
+                            </div>
+
+                            <!-- 最下排 -->
+                            <div class="d-flex justify-content-center align-items-center my-3" id="orderPagination">
+                                <ul class="pagination gap-2">
+                                    <!-- 內容給JS填 -->
+                                </ul>
                             </div>
                         </div>
 
@@ -270,7 +272,7 @@
 
                 <div class="container-fluid">
 
-                    <div class="container my-5" id="detailContainer">
+                    <div class="container my-5 d-none" id="detailContainer">
                         <div class="row p-3">
                             <div class="h3 my-5">
                                 票券訂單明細<span class="text-muted mx-2">#<span id="orderId">0000</span></span>
@@ -325,6 +327,29 @@
         </div>
     </div>
 
+    <!-- 退貨按鈕按下去的Modal畫面 -->
+    <div class="modal fade" id="checkRefundModal" data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 my-text-lightred">退貨</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mx-4">
+                        <p class="my-text-lightblue">退貨原因</p>
+                        <textarea class="form-control mt-3" id="inputRefund" rows="5" disabled></textarea>
+
+                    </div>
+                    <div class="d-flex justify-content-around my-5">
+                        <button type="button" class="btn btn-primary" id="btnRefundOk">退貨申請OK</button>
+                        <button type="button" class="btn btn-primary" id="btnRefundFail">退貨申請失敗</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap 核心 JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -347,13 +372,202 @@
 
     <script>
 
+        // 這邊是假資料
+        const result =
+        {
+            curPage: 1,
+            totalPage: 5,
+            orders: [
+                {
+                    ticketOrderId: 1,
+                    memberId: 1,
+                    memberName: '王小明',
+                    ticketCount: 5,
+                    payDate: '2023-03-06 09:00',
+                    payType: '信用卡',
+                    actualPrice: '97000',
+                },
+                {
+                    ticketOrderId: 2,
+                    memberId: 1,
+                    memberName: '王小明',
+                    ticketCount: 1,
+                    payDate: '2023-07-08 10:00',
+                    payType: 'ATM',
+                    actualPrice: '500',
+                },
+                {
+                    ticketOrderId: 3,
+                    memberId: 2,
+                    memberName: '黃小美',
+                    ticketCount: 1,
+                    payDate: '2023-09-10 19:00',
+                    payType: '信用卡',
+                    actualPrice: '16800',
+                }
+            ]
+        };
+
         $(function () {
 
-             // 查看詳情的按鈕
-      $(document).on('click', '.btn-detail', function () {
-console.log('uuuuuu');
-      });
+            //我要退貨的參數傳遞
+            $('#checkRefundModal').on('show.bs.modal', function (event) {
+                const button = $(event.relatedTarget);
+                const value = button.data('bs-whatever').split('-');
+                const orderId = value[0];
+                const sn = value[1];
+                const name = value[2];
+                const refundReason = value[3]
+                $(this).find('.modal-title').text(name);
+                $('#inputRefund').val(refundReason)
+
+                $('#btnRefundOk').data('ticket-sn-id', sn);
+                $('#btnRefundFail').data('ticket-sn-id', sn);
+            });
+
+            //退貨OK的按鈕
+            $('#btnRefundOk').on('click', function () {
+                const post = {
+                    ticketSnId: $(this).data('ticket-sn-id'),
+                    status: 1,
+                };
+
+                console.log(post);
+                $('#checkRefundModal').modal('hide');
+            });
+            $('#btnRefundFail').on('click', function () {
+                const post = {
+                    ticketSnId: $(this).data('ticket-sn-id'),
+                    status: 2,
+                };
+
+                console.log(post);
+                $('#checkRefundModal').modal('hide');
+            });
+
+
+            // 查看詳情的按鈕
+            $(document).on('click', '.btn-detail', function () {
+                $('#detailContainer').removeClass('d-none');
+
+                const orderId = $(this).closest('tr').find('.order_id').text();
+                const count = parseInt($(this).closest('tr').find('.ticket_count').text());
+
+                $('#orderId').text(orderId);
+
+
+                // 這邊是假資料
+                const resultDetail = [];
+                for (let i = 1; i <= count; i++) {
+                    const detail = {
+                        ticketSnId: Math.trunc(1 + Math.random() * 1000),
+                        name: `#${orderId}訂單內的 票券${i}號`,
+                        price: (100 * i ** 3),
+                        expiryDate: '2023-12-31 22:00',
+                        refundStatus: Math.trunc(Math.random() * 3),
+                        refundReason: `因為天氣不好我想退貨${i}`,
+                    };
+                    resultDetail.push(detail);
+                }
+
+                $('#detailContainer table tbody').html('');
+
+                for (detail of resultDetail) {
+                    const theTr = $('<tr>')
+
+                    $(theTr).append(
+                        `
+                            <td class="ticket_sn_id">${detail.ticketSnId}</td>
+                            <td class="ticket_name">${detail.name}</td>
+                            <td class="actual_price">${detail.price} 元</td>
+                            <td class="expiry_date">${detail.expiryDate}</td>
+                        `
+                    );
+                    //狀態 (0:無退款 1:退款中 2:退款完成)
+                    if (detail.refundStatus === 0) {
+                        $(theTr).append('<td class="my-text-lightblue">正常</td>');
+                    } else if (detail.refundStatus === 1) {
+                        $(theTr).append(
+                            `
+                            <td>
+                                <button class="btn btn-sm btn-primary" type="button" data-bs-toggle="modal"
+                                        data-bs-target="#checkRefundModal" 
+                                        data-bs-whatever="${orderId}-${detail.ticketSnId}-${detail.name}-${detail.refundReason}">
+                                    <i class="fa fa-undo me-2"></i>退貨處理
+                                </button>
+                            </td>
+                            `
+                        );
+                    } else {
+                        $(theTr).append('<td class="my-text-lightred">已退貨</td>');
+                    }
+                    // 填入這一筆資料
+                    $('#detailContainer table tbody').append(theTr);
+                }
+
+            });
+
+            //渲染頁面
+            render();
         })
+
+
+        function render() {
+            // 填入訂單資料
+            $('#orderContainer table tbody').html('');
+
+
+            for (let order of result.orders) {
+                $('#orderContainer table tbody').append(
+                    `
+                    <tr>
+                        <td class="order_id">${order.ticketOrderId}</td>
+                        <td class="member_id">${order.memberId}</td>
+                        <td class="member_name">${order.memberName}</td>
+                        <td class="ticket_count">${order.ticketCount}</td>
+                        <td class="pay_date">${order.payDate}</td>
+                        <td class="pay_type">${order.payType}</td>
+                        <td class="actual_price">${order.actualPrice}</td>
+                        <td>
+                            <button class="btn btn-sm btn-primary btn-detail" type="button">明細</button>
+                        </td>
+                    </tr>
+                    `
+                );
+            }
+
+
+            // 最底下的分頁
+            $('#orderPagination ul').html('');
+
+            if (result.totalPage > 1) {
+                $('#orderPagination ul').append(
+                    `
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                        <span>&laquo;</span>
+                        </a>
+                    </li>
+                    `
+                );
+                for (let i = 1; i <= result.totalPage; i++) {
+                    $('#orderPagination ul').append(
+                        `         
+                            <li class="page-item"><a class="page-link ${i == result.curPage ? 'active' : ''}" href="#">${i}</a></li>
+                        `
+                    );
+                }
+                $('#orderPagination ul').append(
+                    `                    
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                        <span>&raquo;</span>
+                        </a>
+                    </li>
+                    `
+                );
+            }
+        }
 
     </script>
 
