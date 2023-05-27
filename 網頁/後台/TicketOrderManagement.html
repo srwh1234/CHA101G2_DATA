@@ -192,25 +192,75 @@
                     </ul>
                 </nav>
 
-                <h1>待補充</h1>
+                <div class="container">
 
-                <!-- Bootstrap 核心 JavaScript -->
-                <script src="vendor/jquery/jquery.min.js"></script>
-                <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                    <div class="row">
 
-                <!-- 核心插件 JavaScript -->
-                <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+                        <div class="row my-5 mx-1">
+                            <div class="col-12 col-lg-4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="ticketSearchText"
+                                        placeholder="關鍵字搜尋">
+                                    <button class="btn btn-primary" id="btnSearch">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>                            
+                        </div>
 
-                <!-- 自訂腳本，適用於所有頁面 -->
-                <script src="js/TripLight-2.min.js"></script>
+                        <div class="col-12">
 
-                <!-- 頁面級別的插件 -->
-                <script src="vendor/chart.js/Chart.min.js"></script>
+                            <div class="table-responsive p-3" id="ticketContainer">
+                                <table class="table" data-toggle="table">
 
-                <!-- 頁面級別的自訂腳本 -->
-                <script src="js/demo/chart-area-demo.js"></script>
-                <script src="js/demo/chart-pie-demo.js"></script>
-                <script src="path/to/jquery.min.js"></script>
+                                    <!-- 訂單編號	總品項	訂購日期	付款方式	優惠券	總金額 -->
+                                    <thead>
+                                        <tr>
+                                            <th class="my-th-width-sm" data-field="ticket_id">訂單編號</th>
+                                            <th class="my-th-width-sm" data-field="ticket_type">會員編號</th>
+                                            <th class="my-th-width" data-field="ticket_name">名稱</th>
+                                           
+                                            <th class="my-th-width-sm" data-field="available">品項數量</th>
+                                            <th class="my-th-width-sm" data-field="ticket_city">付款日期</th>
+                                            <th class="my-th-width-sm" data-field="supplier_name">付款方式</th>
+                                            <th class="my-th-width-sm" data-field="supplier_name">總金額</th>
+                                            
+                                            <th class="my-th-width-sm"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <!-- 內容給JS填 -->
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 核心 JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- 核心插件 JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- 自訂腳本，適用於所有頁面 -->
+    <script src="js/TripLight-2.min.js"></script>
+
+    <!-- 頁面級別的插件 -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- 頁面級別的自訂腳本 -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="path/to/jquery.min.js"></script>
+    <!-- 使用BootStrap-->
+    <script src="vendor/bootstrap/js/bootstrap.bundle-5.2.3.js"></script>
 
 
 </body>
