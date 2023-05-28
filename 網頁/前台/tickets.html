@@ -6,12 +6,12 @@
   <meta charset="utf-8" />
   <!-- 關鍵字設定 -->
   <meta
-    name="keywords"
-    content="旅遊, 行程規劃, 票券, AI, ChatGPT, Google map, 客製化行程, 套裝行程" />
+        name="keywords"
+        content="旅遊, 行程規劃, 票券, AI, ChatGPT, Google map, 客製化行程, 套裝行程" />
   <!-- 網頁介紹 -->
   <meta
-    name="description"
-    content="我們提供旅遊行程規劃服務，以及販售套裝行程 票券 等等" />
+        name="description"
+        content="我們提供旅遊行程規劃服務，以及販售套裝行程 票券 等等" />
 
   <script>
     addEventListener(
@@ -41,8 +41,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap"
-    rel="stylesheet" />
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap"
+        rel="stylesheet" />
   <!-- //google fonts -->
 
   <!-- 載入icon -->
@@ -389,7 +389,7 @@
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                   選擇類型
                 </button>
               </h2>
@@ -405,7 +405,7 @@
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingTwo">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                  aria-expanded="true" aria-controls="collapseTwo">
+                        aria-expanded="true" aria-controls="collapseTwo">
                   選擇縣市
                 </button>
               </h2>
@@ -452,8 +452,8 @@
               <ul class="col-12 links">
                 <li>
                   <a
-                    href="https://www.google.com/maps?q=桃園市中壢區復興路46號9樓"
-                    target="_blank">地址：桃園市中壢區復興路46號9樓</a>
+                     href="https://www.google.com/maps?q=桃園市中壢區復興路46號9樓"
+                     target="_blank">地址：桃園市中壢區復興路46號9樓</a>
                 </li>
                 <li><a href="tel:02-1234-5678">電話：02-1234-5678</a></li>
                 <li>
@@ -481,7 +481,7 @@
             </div>
           </div>
           <div
-            class="col-lg-3 col-sm-6 mt-lg-0 mt-4 footer-grid_section_1its_w3">
+               class="col-lg-3 col-sm-6 mt-lg-0 mt-4 footer-grid_section_1its_w3">
             <div class="footer-title">
               <h3>成為合作夥伴</h3>
             </div>
@@ -500,7 +500,7 @@
             </div>
           </div>
           <div
-            class="col-lg-3 col-sm-6 mt-lg-0 mt-4 footer-grid_section_1its_w3">
+               class="col-lg-3 col-sm-6 mt-lg-0 mt-4 footer-grid_section_1its_w3">
             <div class="footer-title">
               <h3>聯絡我們</h3>
             </div>
@@ -510,15 +510,15 @@
               </li>
               <li>
                 <a href="https://www.instagram.com/tibame_wiedu/"><img src="./images/instagram.svg"
-                    alt="instagram" /></a>
+                       alt="instagram" /></a>
               </li>
               <li>
                 <a href="https://twitter.com/"><img src="./images/twitter.svg" alt="twitter" /></a>
               </li>
               <li class="youtube">
                 <a
-                  href="https://www.youtube.com/channel/UClhecf7eOGHwbKW5e7l_pTA"><img src="./images/youtube.svg"
-                    alt="youtube" /></a>
+                   href="https://www.youtube.com/channel/UClhecf7eOGHwbKW5e7l_pTA"><img src="./images/youtube.svg"
+                       alt="youtube" /></a>
               </li>
             </ul>
           </div>
@@ -547,7 +547,7 @@
   <script src="./js/bootstrap.bundle.min.js"></script>
   <script src="./js/jquery-3.6.4.min.js"></script>
   <script>
-    const result = [];
+    let result = [];
     const resultHot = [];
     const resultSearch =
     {
@@ -572,7 +572,7 @@
       //假資料 以後要從資料庫取得
       for (let i = 1; i < 9; i++) {
         const ticket = {
-          ticket_id: i,
+          ticketId: i,
           name: `票券的名稱#${i}`,
           price: 55 * (i ** 2),
           rating: 3,
@@ -585,7 +585,7 @@
       }
       for (let i = 21; i < 25; i++) {
         const ticket = {
-          ticket_id: i,
+          ticketId: i,
           name: `票券的名稱#${i}`,
           price: 55 * (i ** 2),
           rating: 3,
@@ -598,7 +598,7 @@
       }
       for (let i = 21; i < 31; i++) {
         const ticket = {
-          ticket_id: i,
+          ticketId: i,
           name: `票券的名稱#${i}`,
           price: 55 * (i ** 2),
           rating: Math.trunc((Math.random() * 5) + 1),
@@ -632,12 +632,25 @@
       });
 
       //渲染頁面
-      render_rnd();
+      render();
+      // render_rnd();
       render_hot();
       render_search();
       render_collapse_types();
       render_collapse_cities();
     });
+
+    function render() {
+      // 取回隨機票券
+      fetch(`http://localhost:8080/TripLight/rndtickets`)
+        .then(response => response.json())
+        .then(data => {
+          // console.log(result);
+          result = data;
+          render_rnd();
+        })
+        .catch(error => console.log(error));
+    }
 
     function render_rnd() {
       $('#ticketsContainer').html('');
@@ -646,7 +659,7 @@
         $('#ticketsContainer').append(`
           <div class="col mb-3">
             <div class="image-tour position-relative">
-              <a href="tickets_detail.html?id=${ticket.ticket_id}">
+              <a href="tickets_detail.html?id=${ticket.ticketId}">
                 <img src="${ticket.image}" class="card-img" />
               </a>
               <p><span class="fa fa-tags"></span><span>${ticket.price}元</span></p>
@@ -670,13 +683,13 @@
           <div class="col destinations-grids mb-3">
             <h4 class="destination text-center mb-3">${ticket.city}</h4>
             <div class="image-tour-hot position-relative">
-              <a href="tickets_detail.html?id=${ticket.ticket_id}">
+              <a href="tickets_detail.html?id=${ticket.ticketId}">
                 <img src="${ticket.image}" class="card-img"/>
               </a>
               <div class="my-destinations-info">
                 <div class="caption mb-lg-3">
                   <h4>${ticket.name}</h4>
-                  <a href="tickets_detail.html?id=${ticket.ticket_id}">立即購買</a>
+                  <a href="tickets_detail.html?id=${ticket.ticketId}">立即購買</a>
                 </div>
               </div>
             </div>
@@ -691,7 +704,7 @@
         $('#ticketsSearchContainer').append(
           `
           <div class="card mb-3 my-search-item">
-            <a href="tickets_detail.html?id=${ticket.ticket_id}">
+            <a href="tickets_detail.html?id=${ticket.ticketId}">
               <div class="row g-0 h-100">
                 <div class="col-lg-4 h-100">
                   <img src="${ticket.image}" class="img-fluid rounded-start">
