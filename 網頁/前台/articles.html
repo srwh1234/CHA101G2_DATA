@@ -72,6 +72,15 @@
   <!-- 使用fullcalendar 顯示日曆視圖 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.css">
 
+    <!--jQuery-->
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+    <!--會員登入-->
+    <link href="css/login.css" rel="stylesheet" />
 
   <style>
     body {
@@ -136,8 +145,60 @@
 </head>
 
 <body>
-  <!-- 登入 -->
+    <!-- header -->
+    <header>
+      <div class="container" style="padding-right: 0px">
+        <!-- nav -->
+        <nav class="py-md-4 py-3">
+          <div id="logo">
+            <h1 class="mt-md-0 mt-2">
+              <a href="index.html"><img src="./images/icon.png" class="icon_triplight" />
+                TripLight
+              </a>
+            </h1>
+          </div>
+          <label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
+          <input type="checkbox" id="drop" />
+          <ul class="menu ml-auto mt-1">
+            <li class=""><a href="index.html">首頁</a></li>
+            <li class=""><a href="booking.html">AI行程規劃</a></li>
+            <li class=""><a href="tickets.html">票券</a></li>
+            <li class=""><a href="packages.html">套裝行程</a></li>
+            <li class=""><a href="articles.html">旅遊文章</a></li>
+            <li class="booking"><a href="" id="login">登入/註冊</a></li>
+            <li class="">
+              <a href="shopping_car.html"><img src="./images/shoppingCar.svg" alt="" style="width: 2em" /></a>
+            </li>
+          </ul>
+        </nav>
+        <!-- //nav -->
+        <div class="member">
+          <ul class="member_list">
+            <li class="member_li"><a href="login.html"><i class="fa-regular fa-user"></i>管理帳戶</a>
+            </li>
+            <li class="member_li" id="order_li"><a href=""><i class="fa-solid fa-plane"></i>訂單管理</a>
+              <ul class="order_list">
+                <li class="order_content"><a href="tickets_order.html"><i class="fa-solid fa-ticket"></i>票券訂單</a></li>
+                <li class="order_content"><a href="group_order.html"><i class="fa-solid fa-suitcase"></i>旅遊團訂單</a>
+                </li>
+              </ul>
+            </li>
+            <li class="member_li"><a href="my_favorite.html"><i class="fa-regular fa-heart"></i>我的收藏</a></li>
+            <li class="member_li"><a href="comment.html"><i class="fa-solid fa-pen-to-square"></i>我的評價</a></li>
+            <li class="member_li"><a href="article_myfavorite.html"><i class="fa-solid fa-copy"></i>我的文章</a></li>
+            <li class="member_li"><a href="membership_rating.html"><i class="fa-regular fa-gem"></i>會員分級</a></li>
+            <li class="member_li"><a href="coupon.html"><i class="fa-solid fa-sack-dollar"></i>優惠碼</a></li>
+            <li class="member_li"><a href="question_form.html"><i class="fa-regular fa-comment"></i>提出問題</a></li>
+            <li class="member_li"><a href="https://www.google.com"><i class="fa-regular fa-comment"></i>查看問題</a></li>
+            <li class="member_li" id="logout_li"><a href=""><i class="fa-solid fa-right-from-bracket"></i>登出</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- //header -->
 
+  <!-- 登入  -->
   <div id="login-container">
     <!---container--->
 
@@ -197,8 +258,7 @@
       <div class="fas fa-times"></div>
     </span>
   </div>
-
-  <!-- 登入  -->
+    <!-- 登入  -->
 
   <!-- banner -->
   <section class="banner_inner" id="home">
@@ -801,7 +861,7 @@
 
 </body>
 <!-- login顯示 -->
-<script src="/js/Login.js"></script>
+<script src="./js/Login.js"></script>
 <!-- login顯示 -->
 
 <!-- 使用BootStrap-->
