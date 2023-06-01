@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <title>TripLight | Packages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <!-- 關鍵字設定 -->
+    <meta name="keywords" content="旅遊, 行程規劃, 票券, AI, ChatGPT, Google map, 客製化行程, 套裝行程" />
+    <!-- 網頁介紹 -->
+    <meta name="description" content="我們提供旅遊行程規劃服務，以及販售套裝行程 票券 等等" />
+
+    <script>
+        addEventListener(
+            "load",
+            function () {
+                setTimeout(hideURLbar, 0);
+            },
+            false
+        );
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+
+    <style>
+        #show_forums_table.topics tr td {
+            border-bottom: 1px solid #bbb;
+        }
+
+        #show_forums_table.topics td {
+            padding: 8px 2px;
+        }
+
+        #show_forums_table .tHead {
+            background-color: #f2f2f2;
+            border-top: 1px solid #e8e8e8;
+            border-bottom: 1px solid #e8e8e8;
+            color: #000;
+            font-size: 12px;
+            font-weight: 700;
+            height: 26px;
+        }
+
+        #show_forums_table.topics td.repliescol {
+            text-align: left;
+        }
+
+        #show_forums_table.topics td.datecol {
+            padding-left: 14px;
+            width: 110px;
+        }
+
+        .sprite-magGlass_gry {
+            background-image: url(/sprites/header_pack-ve3c07db….png);
+            background-position: left -211px;
+            background-repeat: no-repeat;
+        }
+
+        .ui_button.primary {
+            border-color: #000;
+            border-radius: 3px;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .ui_button.small {
+            padding: 6px 10px;
+            font-size: 12px;
+            line-height: 16px;
+        }
+
+        table.search {
+            width: 100%;
+            border: solid 1px #CCC;
+        }
+
+        h3.sideBarHeader {
+            background-color: #00a680;
+            padding: 4px;
+            margin-bottom: 4px;
+            color: #fff;
+            font-size: 12px;
+        }
+
+        .green_bg_100 {
+            background-color: #00a680;
+        }
+    </style>
+
+    <!-- css files -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <!-- bootstrap css -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <!-- custom css -->
+    <link href="css/fontawesome-all.css" rel="stylesheet" />
+    <!-- fontawesome css -->
+    <!-- //css files -->
+
+    <!-- google fonts -->
+    <!-- 載入字體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet" />
+    <!-- //google fonts -->
+
+    <!-- 載入icon -->
+    <link rel="shortcut icon" href="./images/icon.png" />
+    <link rel="bookmark" href="./images/icon.png" />
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <div class="container" style="padding-right: 0px">
+            <!-- nav -->
+            <nav class="py-md-4 py-3">
+                <div id="logo">
+                    <h1 class="mt-md-0 mt-2">
+                        <a href="index.html"><img src="./images/icon.png" class="icon_triplight" />
+                            TripLight
+                        </a>
+                    </h1>
+                </div>
+                <label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
+                <input type="checkbox" id="drop" />
+                <ul class="menu ml-auto mt-1">
+                    <li class=""><a href="index.html">首頁</a></li>
+                    <li class=""><a href="booking.html">AI行程規劃</a></li>
+                    <li class=""><a href="tickets.html">票券</a></li>
+                    <li class=""><a href="packages.html">套裝行程</a></li>
+                    <li class="active"><a href="articles.html">旅遊文章</a></li>
+                    <li class="booking"><a href="" id="login">登入/註冊</a></li>
+                    <li class="">
+                        <a href="shopping_car.html"><img src="./images/shoppingCar.svg" alt="" style="width: 2em" /></a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- //nav -->
+        </div>
+    </header>
+    <!-- //header -->
+    <!-- 登入 -->
+
+    <div id="login-container">
+        <!---container--->
+
+        <div class="main-box login">
+            <h3>登入</h3>
+            <form action="">
+                <div class="input-box">
+                    <i class="fas fa-envelope icon2"></i>
+                    <input type="email" name="email" required />
+                    <label for="">信箱</label>
+                </div>
+                <div class="input-box">
+                    <i class="fas fa-lock icon2"></i>
+                    <input type="password" name="password" required />
+                    <label for="">密碼</label>
+                </div>
+                <div class="check">
+                    <label><input type="checkbox" />記住我</label>
+                    <a href="#">忘記密碼</a>
+                </div>
+                <button type="submit" class="main-btn">Login</button>
+                <div class="register">
+                    <p>如果沒有帳號?<a href="#" class="register-link">點擊註冊</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="main-box register">
+            <h3>註冊</h3>
+            <form action="">
+                <div class="input-box">
+                    <i class="fas fa-user icon2"></i>
+                    <input type="email" name="email" required />
+                    <label for="">使用者名稱</label>
+                </div>
+                <div class="input-box">
+                    <i class="fas fa-envelope icon2"></i>
+                    <input type="email" name="email" required />
+                    <label for="">信箱</label>
+                </div>
+                <div class="input-box">
+                    <i class="fas fa-lock icon2"></i>
+                    <input type="password" name="password" required />
+                    <label for="">密碼</label>
+                </div>
+                <div class="check">
+                    <label><input type="checkbox" />我同意所有條款</label>
+                </div>
+                <button type="submit" class="main-btn">註冊</button>
+                <div class="register">
+                    <p>已經有帳號?<a href="#" class="login-link">點擊登入</a></p>
+                </div>
+            </form>
+        </div>
+
+        <span class="close-icon">
+            <div class="fas fa-times"></div>
+        </span>
+    </div>
+
+    <!-- 登入  -->
+
+    <!-- banner -->
+    <section class="banner_inner" id="home">
+        <div class="banner_inner_overlay"></div>
+    </section>
+    <!-- //banner -->
+
+    <!-- tour packages -->
+    <section class="packages pt-5">
+        <div class="container py-lg-4 py-sm-3">
+            <h2 class="heading text-capitalize text-center">討論區：台灣</h2>
+            <div class="row my-3"> <!-- 新增的空白列 -->
+                <div class="col"></div>
+            </div>
+            <table width="100%" border="0" id="show_forums_table" cellpadding="0" cellspacing="0" class="topics">
+                <tbody>
+                    <tr>
+                        <td class="tHead">&nbsp;</td>
+                        <td class="tHead">標題</td>
+                        <td class="tHead repliescol">回應者</td>
+                        <td class="tHead datecol">最後修改時間</td>
+                    </tr>
+                    <tr>
+                        <td class="">
+                            &nbsp;
+                        </td>
+                        <td class="">
+                            <b><a href="/ShowTopic-g1-i26969-k13859033-EU_vet_certifying_UK_rabies_vaccine_in_EU_pet_passport-Traveling_with_Pets.html"
+                                    onclick="setPID(34603)">
+                                    【問題】桃園有哪裡好玩？</a></b><br>
+                            <div class="bymember">
+                                by <a href="/Profile/475luisp?tab=forum">Luis</a> </div>
+                        </td>
+                        <td class="reply rowentry ">
+                            55
+                        </td>
+                        <td class="datecol rowentry ">
+                            <a
+                                href="/ShowTopic-g1-i26969-k13859033-o50-EU_vet_certifying_UK_rabies_vaccine_in_EU_pet_passport-Traveling_with_Pets.html#117688597">May
+                                25, 2023</a>
+                            <div class="bymember">
+                                by <a href="/Profile/drmargarets2023?tab=forum">Margaret</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="">
+                            &nbsp;
+                        </td>
+                        <td class="">
+                            <b><a href="/ShowTopic-g1-i26969-k14403989-Traveling_to_Spain_with_my_cat_Rabbies_Vaccine-Traveling_with_Pets.html"
+                                    onclick="setPID(34603)">
+                                    【遊記】帶我的狗遊歷新北的寵物公園 - Rabbies Vaccine</a></b><br>
+                            <div class="bymember">
+                                by <a href="/Profile/Grandepuce8?tab=forum">Tina L</a> </div>
+                        </td>
+                        <td class="reply rowentry ">
+                            3
+                        </td>
+                        <td class="datecol rowentry ">
+                            <a
+                                href="/ShowTopic-g1-i26969-k14403989-Traveling_to_Spain_with_my_cat_Rabbies_Vaccine-Traveling_with_Pets.html#117682322">May
+                                25, 2023</a>
+                            <div class="bymember">
+                                by <a href="/Profile/IanB2748?tab=forum">Ian B</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="">
+                            &nbsp;
+                        </td>
+                        <td class="">
+                            <b><a href="/ShowTopic-g1-i26969-k14403137-Ferrara_veterinarian_recommendations-Traveling_with_Pets.html"
+                                    onclick="setPID(34603)">
+                                    【食記】榮次郎個人燒肉－好吃</a></b><br>
+                            <div class="bymember">
+                                by <a href="/Profile/bigp433?tab=forum">bigparticipant</a> </div>
+                        </td>
+                        <td class="reply rowentry ">
+                            6
+                        </td>
+                        <td class="datecol rowentry ">
+                            <a
+                                href="/ShowTopic-g1-i26969-k14403137-Ferrara_veterinarian_recommendations-Traveling_with_Pets.html#117678379">May
+                                24, 2023</a>
+                            <div class="bymember">
+                                by <a href="/Profile/bigp433?tab=forum">bigparticipa...</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="">
+                            &nbsp;
+                        </td>
+                        <td class="">
+                            <b><a href="/ShowTopic-g1-i26969-k14343443-Animal_Health_Certificate-Traveling_with_Pets.html"
+                                    onclick="setPID(34603)">
+                                    【評論】中正公園的遊樂器材</a></b><br>
+                            <div class="bymember">
+                                by <a href="/Profile/NewcastleSpook?tab=forum">NewcastleSpook</a> </div>
+                        </td>
+                        <td class="reply rowentry ">
+                            6
+                        </td>
+                        <td class="datecol rowentry ">
+                            <a
+                                href="/ShowTopic-g1-i26969-k14343443-Animal_Health_Certificate-Traveling_with_Pets.html#117632187">May
+                                20, 2023</a>
+                            <div class="bymember">
+                                by <a href="/Profile/422catherinew?tab=forum">Catherine</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="">
+                            &nbsp;
+                        </td>
+                        <td class="">
+                            <b><a href="/ShowTopic-g1-i26969-k14396487-Terminal_2_Heathrow_with_2_suitcases_and_a_large_sky_kennel-Traveling_with_Pets.html"
+                                    onclick="setPID(34603)">
+                                    【問題】這次旅展哪家給的優惠最棒？</a></b><br>
+                            <div class="bymember">
+                                by <a href="/Profile/naomihM5367TM?tab=forum">Naomi H</a> </div>
+                        </td>
+                        <td class="reply rowentry ">
+                            1
+                        </td>
+                        <td class="datecol rowentry ">
+                            <a
+                                href="/ShowTopic-g1-i26969-k14396487-Terminal_2_Heathrow_with_2_suitcases_and_a_large_sky_kennel-Traveling_with_Pets.html#117607239">May
+                                17, 2023</a>
+                            <div class="bymember">
+                                by <a href="/Profile/RescueTeam?tab=forum">RescueMe</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="">
+                            &nbsp;
+                        </td>
+                        <td class="">
+                            <b><a href="/ShowTopic-g1-i26969-k13998067-Does_LAX_need_customs_broker_for_pet_cats-Traveling_with_Pets.html"
+                                    onclick="setPID(34603)">
+                                    【遊記】桃園地景藝術節</a></b><br>
+                            <div class="bymember">
+                                by <a href="/Profile/michellempg?tab=forum">Michelle</a> </div>
+                        </td>
+                        <td class="reply rowentry ">
+                            2
+                        </td>
+                        <td class="datecol rowentry ">
+                            <a
+                                href="/ShowTopic-g1-i26969-k13998067-Does_LAX_need_customs_broker_for_pet_cats-Traveling_with_Pets.html#117571676">May
+                                14, 2023</a>
+                            <div class="bymember">
+                                by <a href="/Profile/RescueTeam?tab=forum">RescueMe</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="">
+                            &nbsp;
+                        </td>
+                        <td class="">
+                            <b><a href="/ShowTopic-g1-i26969-k14385168-Driving_from_Clearwater_Florida_to_Portsmouth_NH-Traveling_with_Pets.html"
+                                    onclick="setPID(34603)">
+                                    【食記】中二火鍋店－嗑肉食鍋</a></b><br>
+                            <div class="bymember">
+                                by <a href="/Profile/davesY1791JU?tab=forum">Dave</a> </div>
+                        </td>
+                        <td class="reply rowentry ">
+                            4
+                        </td>
+                        <td class="datecol rowentry ">
+                            <a
+                                href="/ShowTopic-g1-i26969-k14385168-Driving_from_Clearwater_Florida_to_Portsmouth_NH-Traveling_with_Pets.html#117517096">May
+                                09, 2023</a>
+                            <div class="bymember">
+                                by <a href="/Profile/martijewel?tab=forum">martijewel</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="">
+                            &nbsp;
+                        </td>
+                        <td class="">
+                            <b><a href="/ShowTopic-g1-i26969-k14386365-Travelling_with_Akita_Inu-Traveling_with_Pets.html"
+                                    onclick="setPID(34603)">
+                                    【評論】中壢夜市的攤位動線改善</a></b><br>
+                            <div class="bymember">
+                                by <a href="/Profile/yuramozol?tab=forum">Yura Mozol</a> </div>
+                        </td>
+                        <td class="reply rowentry ">
+                            1
+                        </td>
+                        <td class="datecol rowentry ">
+                            <a
+                                href="/ShowTopic-g1-i26969-k14386365-Travelling_with_Akita_Inu-Traveling_with_Pets.html#117516710">May
+                                09, 2023</a>
+                            <div class="bymember">
+                                by <a href="/Profile/RescueTeam?tab=forum">RescueMe</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="">
+                            &nbsp;
+                        </td>
+                        <td class="">
+                            <b><a href="/ShowTopic-g1-i26969-k14382211-UK_to_France_Animal_Health_Certificate_Issue-Traveling_with_Pets.html"
+                                    onclick="setPID(34603)">
+                                    【問題】中壢能最晚checkin的飯店是哪家？</a></b><br>
+                            <div class="bymember">
+                                by <a href="/Profile/T6069WPians?tab=forum">Ian S</a> </div>
+                        </td>
+                        <td class="reply rowentry ">
+                            6
+                        </td>
+                        <td class="datecol rowentry ">
+                            <a
+                                href="/ShowTopic-g1-i26969-k14382211-UK_to_France_Animal_Health_Certificate_Issue-Traveling_with_Pets.html#117487406">May
+                                06, 2023</a>
+                            <div class="bymember">
+                                by <a href="/Profile/491keithc?tab=forum">keith c</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="">
+                            &nbsp;
+                        </td>
+                        <td class="">
+                            <b><a href="/ShowTopic-g1-i26969-k14376705-Travelling_through_France_and_Spain_with_2_dogs-Traveling_with_Pets.html"
+                                    onclick="setPID(34603)">
+                                    【遊記】拉拉山一日遊</a></b><br>
+                            <div class="bymember">
+                                by <a href="/Profile/aliO8269RB?tab=forum">aliO8269RB</a> </div>
+                        </td>
+                        <td class="reply rowentry ">
+                            1
+                        </td>
+                        <td class="datecol rowentry ">
+                            <a
+                                href="/ShowTopic-g1-i26969-k14376705-Travelling_through_France_and_Spain_with_2_dogs-Traveling_with_Pets.html#117460994">May
+                                04, 2023</a>
+                            <div class="bymember">
+                                by <a href="/Profile/jcsed8d?tab=forum">James C</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="">
+                            &nbsp;
+                        </td>
+                        <td class="">
+                            <b><a href="/ShowTopic-g1-i26969-k14372325-Travelling_with_dog_on_ferry_from_Scotland_to_Northern_Irela-Traveling_with_Pets.html"
+                                    onclick="setPID(34603)">
+                                    【評論】中壢火車站的觀光客引導站</a></b><br>
+                            <div class="bymember">
+                                by <a href="/Profile/marygG8758FW?tab=forum">Mary G</a> </div>
+                        </td>
+                        <td class="reply rowentry ">
+                            1
+                        </td>
+                        <td class="datecol rowentry ">
+                            <a
+                                href="/ShowTopic-g1-i26969-k14372325-Travelling_with_dog_on_ferry_from_Scotland_to_Northern_Irela-Traveling_with_Pets.html#117389919">Apr
+                                27, 2023</a>
+                            <div class="bymember">
+                                by <a href="/Profile/IanB2748?tab=forum">Ian B</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="">
+                            &nbsp;
+                        </td>
+                        <td class="">
+                            <b><a href="/ShowTopic-g1-i26969-k14370569-Istanbul_to_Chicago_ORD_Where_to_pick_up_dog-Traveling_with_Pets.html"
+                                    onclick="setPID(34603)">
+                                    【食記】龜山的老字號義式美食－享樂煮義</a></b><br>
+                            <div class="bymember">
+                                by <a href="/Profile/W6046PDjulieg?tab=forum">Julie G</a> </div>
+                        </td>
+                        <td class="reply rowentry ">
+                            3
+                        </td>
+                        <td class="datecol rowentry ">
+                            <a
+                                href="/ShowTopic-g1-i26969-k14370569-Istanbul_to_Chicago_ORD_Where_to_pick_up_dog-Traveling_with_Pets.html#117374087">Apr
+                                26, 2023</a>
+                            <div class="bymember">
+                                by <a href="/Profile/W6046PDjulieg?tab=forum">Julie G</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="">
+                            &nbsp;
+                        </td>
+                        <td class="">
+                            <b><a href="/ShowTopic-g1-i26969-k14367429-Relocation_Norway_to_Scotland_with_dog-Traveling_with_Pets.html"
+                                    onclick="setPID(34603)">
+                                    【問題】我從八德要怎麼到桃園機場最快？</a></b><br>
+                            <div class="bymember">
+                                by <a href="/Profile/Explore174660?tab=forum">Explore174660</a> </div>
+                        </td>
+                        <td class="reply rowentry ">
+                            3
+                        </td>
+                        <td class="datecol rowentry ">
+                            <a
+                                href="/ShowTopic-g1-i26969-k14367429-Relocation_Norway_to_Scotland_with_dog-Traveling_with_Pets.html#117366610">Apr
+                                25, 2023</a>
+                            <div class="bymember">
+                                by <a href="/Profile/smudge99?tab=forum">smudge99</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="">
+                            &nbsp;
+                        </td>
+                        <td class="">
+                            <b><a href="/ShowTopic-g1-i26969-k14360602-Travel_from_US_to_Greece_with_small_dog-Traveling_with_Pets.html"
+                                    onclick="setPID(34603)">
+                                    【遊記】騎車遊永安漁港和竹圍漁港</a></b><br>
+                            <div class="bymember">
+                                by <a href="/Profile/174naninev?tab=forum">Nanine V</a> </div>
+                        </td>
+                        <td class="reply rowentry ">
+                            6
+                        </td>
+                        <td class="datecol rowentry ">
+                            <a
+                                href="/ShowTopic-g1-i26969-k14360602-Travel_from_US_to_Greece_with_small_dog-Traveling_with_Pets.html#117366593">Apr
+                                25, 2023</a>
+                            <div class="bymember">
+                                by <a href="/Profile/smudge99?tab=forum">smudge99</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="">
+                            &nbsp;
+                        </td>
+                        <td class="">
+                            <b><a href="/ShowTopic-g1-i26969-k10908095-Allegiant_pet_carrier-Traveling_with_Pets.html"
+                                    onclick="setPID(34603)">
+                                    【評論】桃園的ATT4Fun</a></b><br>
+                            <div class="bymember">
+                                by <a href="/Profile/rphbaker?tab=forum">rphbaker</a> </div>
+                        </td>
+                        <td class="reply rowentry ">
+                            48
+                        </td>
+                        <td class="datecol rowentry ">
+                            <a
+                                href="/ShowTopic-g1-i26969-k10908095-o40-Allegiant_pet_carrier-Traveling_with_Pets.html#117302448">Apr
+                                19, 2023</a>
+                            <div class="bymember">
+                                by <a href="/Profile/Metal-maid?tab=forum">Mary Ann</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="container align-items-center justify-content-between d-flex">
+            <span class="pgCount"><span>1-15</span> <i>of</i> 1,234 topics</span>
+            <div id="pager_top2" class="pgLinks">
+                <span class="guiArw pageEndPrev">«</span>
+                <span class="paging pageDisplay">1</span>
+                <a href="/ShowForum-g1-i26969-o20-Traveling_with_Pets.html" class="paging taLnk">2</a>
+                <a href="/ShowForum-g1-i26969-o40-Traveling_with_Pets.html" class="paging taLnk">3</a>
+                <a href="/ShowForum-g1-i26969-o60-Traveling_with_Pets.html" class="paging taLnk">4</a>
+                <a href="/ShowForum-g1-i26969-o80-Traveling_with_Pets.html" class="paging taLnk">5</a>
+                <a href="/ShowForum-g1-i26969-o100-Traveling_with_Pets.html" class="paging taLnk">6</a>
+                <a href="/ShowForum-g1-i26969-o120-Traveling_with_Pets.html" class="paging taLnk">7</a>
+                <a href="/ShowForum-g1-i26969-o140-Traveling_with_Pets.html" class="paging taLnk">8</a>
+                <span class="paging pagePause">...</span>
+                <a href="/ShowForum-g1-i26969-o1580-Traveling_with_Pets.html" class="paging taLnk">80</a>
+                <a href="/ShowForum-g1-i26969-o20-Traveling_with_Pets.html" class="guiArw sprite-pageNext">»</a>
+            </div>
+    </section>
+    <!-- tour packages -->
+
+    <!-- destinations -->
+    <section class="destinations py-5" id="destinations">
+        <div class="container py-xl-5 py-lg-3">
+            <table class="search" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr class="green_bg_100">
+                        <td>
+                            <h3 class="sideBarHeader">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">搜索論壇</font>
+                                </font>
+                            </h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="search_container">
+                                <table cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <form method="GET" action="/SearchForums" id="SearchForumsForm">
+                                                    <table cellspacing="0" cellpadding="2">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <b>
+                                                                        <font style="vertical-align: inherit;">
+                                                                            <font style="vertical-align: inherit;">
+                                                                                在所有討論區中搜索：</font>
+                                                                        </font>
+                                                                    </b>&nbsp;
+                                                                </td>
+                                                                <td>
+                                                                    <input type="text" name="q">
+                                                                </td>
+                                                                <td onclick="setPID(34596)">
+                                                                    <input class="gobutton" type="image"
+                                                                        src="https://static.tacdn.com/img/buttons_en/go.gif"
+                                                                        alt="點擊搜索論壇">
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <input type="hidden" name="returnTo"
+                                                        value="__2F__ListForums__2D__g1__2D__World__2E__html">
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- destinations -->
+
+    <!--footer -->
+    <footer>
+        <section class="footer footer_w3layouts_section_1its py-5">
+            <div class="container py-lg-4 py-3">
+                <div class="row footer-top">
+                    <div class="col-lg-3 col-sm-6 footer-grid_section_1its_w3">
+                        <div class="footer-title">
+                            <h3>地點資訊</h3>
+                        </div>
+                        <div class="row">
+                            <ul class="col-12 links">
+                                <li>
+                                    <a href="https://www.google.com/maps?q=桃園市中壢區復興路46號9樓"
+                                        target="_blank">地址：桃園市中壢區復興路46號9樓</a>
+                                </li>
+                                <li><a href="tel:02-1234-5678">電話：02-1234-5678</a></li>
+                                <li>
+                                    <a href="mailto:contact@example.com">信箱：triplirht@gmail.com</a>
+                                </li>
+                                <li><a href="tel:02-1234-5678">傳真：02-1234-5678</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 footer-grid_section mt-sm-0 mt-4">
+                        <div class="footer-title">
+                            <h3>認識TripLight</h3>
+                        </div>
+                        <div class="row">
+                            <ul class="col-10 links">
+                                <li><a href="about.html" class="scroll">關於我們</a></li>
+                                <li>
+                                    <a href="user_terms.html" class="scroll">使用者條款 </a>
+                                </li>
+                                <li>
+                                    <a href="privacy_policy.html" class="scroll">隱私權保護政策</a>
+                                </li>
+                                <li><a href="faq.html" class="scroll"> 常見問題與幫助</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mt-lg-0 mt-4 footer-grid_section_1its_w3">
+                        <div class="footer-title">
+                            <h3>成為合作夥伴</h3>
+                        </div>
+                        <div class="row">
+                            <ul class="col-6 links">
+                                <li>
+                                    <a href="supplier_form.html" class="scroll">成為供應商</a>
+                                </li>
+                                <li>
+                                    <a href="blogger_photographer.html" class="scroll">部落客/攝影師合作計畫</a>
+                                </li>
+                                <li>
+                                    <a href="group_form.html" class="scroll">團體客製規劃</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mt-lg-0 mt-4 footer-grid_section_1its_w3">
+                        <div class="footer-title">
+                            <h3>聯絡我們</h3>
+                        </div>
+                        <ul class="social_section_1info">
+                            <li>
+                                <a href="https://www.facebook.com/TibaMe"><img src="./images/facebook.svg"
+                                        alt="facebook" /></a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/tibame_wiedu/"><img src="./images/instagram.svg"
+                                        alt="instagram" /></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/"><img src="./images/twitter.svg" alt="twitter" /></a>
+                            </li>
+                            <li class="youtube">
+                                <a href="https://www.youtube.com/channel/UClhecf7eOGHwbKW5e7l_pTA"><img
+                                        src="./images/youtube.svg" alt="youtube" /></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <!-- //footer -->
+
+    <!-- copyright -->
+    <div class="copyright py-3 text-center">
+        <p>COPYRIGHT © 2023 TripLight All rights reserved.</p>
+    </div>
+    <!-- //copyright -->
+
+    <!-- move top -->
+    <div class="move-top text-right">
+        <a href="#home" class="move-top">
+            <span class="fa fa-angle-up mb-3" aria-hidden="true"></span>
+        </a>
+    </div>
+    <!-- move top -->
+</body>
+<!-- login顯示 -->
+<script src="/js/Login.js"></script>
+<!-- login顯示 -->
+
+</html>
