@@ -87,7 +87,7 @@ const logout_li = document.querySelector("#logout_li");
 $(logout_li).on("click", function (e) {
   e.preventDefault();
   window.location.assign("index.html")
-  document.querySelector('#login').innerHTML = ` 登入/註冊`;
+  // document.querySelector('#login').innerHTML = ` 登入/註冊`;
 
   //unfinished
 })
