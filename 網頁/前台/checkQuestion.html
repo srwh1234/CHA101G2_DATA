@@ -31,7 +31,7 @@
     <!-- custom css -->
     <link href="css/fontawesome-all.css" rel="stylesheet" />
     <!-- fontawesome css -->
-    <link rel="stylesheet" href="css/question_form.css">
+    <link rel="stylesheet" href="./css/checkQuestion.css">
     <!-- question_form.css -->
     <!-- //css files -->
 
@@ -224,53 +224,56 @@
             </div>
             <!-- 右邊會員資料 -->
             <div class="col-9">
-                <section class="packages pt-5">
-                    <div class="container-2">
-                      <h2 class="text-center">問題回報</h2>
-                      <div class="form-container">
-                        <form>
-                          <div class="form-group">
-                            <label for="main">主旨</label>
-                            <input
-                              type="main"
-                              class="form-control"
-                              id="main"
-                              placeholder="請輸入主旨"
-                              required
-                            />
-                          </div>
-                          <div class="form-group">
-                            <label for="message">問題內容</label>
-                            <textarea
-                              class="form-control"
-                              id="message"
-                              placeholder="請輸入內容"
-                              required
-                            ></textarea>
-                          </div>
-                          <div class="form-check">
-                            <label class="form-check-label">
-                              <input class="form-check-input" type="checkbox" required/> 我同意規範
-                            </label>
-                          </div>
-                          <button type="submit" class="submit-btn btn-primary mt-3">
-                            送出問題
-                          </button>
+                <div class="container6">
+                    <div class="chat-title6">我的問題</div>
+                    <div class="chat-room6">
+                      <div class="message6 sender6">客戶的問題</div>
+                      <div class="message6 receiver6">客服的答案</div>
+                      <div class="rating6">
+                        <form action="post">
+                          <label>滿意度為:</label>
+                        <label>
+                          <input type="radio" name="stars" value="1" />
+                          <span class="icon">★</span>
+                        </label>
+                        <label>
+                          <input type="radio" name="stars" value="2" />
+                          <span class="icon">★</span>
+                          <span class="icon">★</span>
+                        </label>
+                        <label>
+                          <input type="radio" name="stars" value="3" />
+                          <span class="icon">★</span>
+                          <span class="icon">★</span>
+                          <span class="icon">★</span>   
+                        </label>
+                        <label>
+                          <input type="radio" name="stars" value="4" />
+                          <span class="icon">★</span>
+                          <span class="icon">★</span>
+                          <span class="icon">★</span>
+                          <span class="icon">★</span>
+                        </label>
+                        <label>
+                          <input type="radio" name="stars" value="5" />
+                          <span class="icon">★</span>
+                          <span class="icon">★</span>
+                          <span class="icon">★</span>
+                          <span class="icon">★</span>
+                          <span class="icon">★</span>
+                        </label>
+                        <div class="submit-btn6">
+                          <button type="submit">提交</button>
+                        </div>
                         </form>
                       </div>
+                      </div>
                     </div>
-                </section>
-
-                
-
+                  </div>
             </div>
         </div>
     </div>
     </div>
-
-
-
-
 
 
     <!--footer -->
