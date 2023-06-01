@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <title>TripLight | Packages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <!-- 關鍵字設定 -->
+    <meta name="keywords" content="旅遊, 行程規劃, 票券, AI, ChatGPT, Google map, 客製化行程, 套裝行程" />
+    <!-- 網頁介紹 -->
+    <meta name="description" content="我們提供旅遊行程規劃服務，以及販售套裝行程 票券 等等" />
+
+    <script>
+        addEventListener(
+            "load",
+            function () {
+                setTimeout(hideURLbar, 0);
+            },
+            false
+        );
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+
+    <style>
+        .c-section {
+            position: relative;
+            margin-bottom: 12px;
+            /* text-align: right; */
+        }
+
+
+        user agent stylesheet section {
+            display: block;
+        }
+
+        body {
+            height: 100%;
+            background: url(https://i2.bahamut.com.tw/html_bg.gif) center top #F9F9F9;
+            font-family: "Helvetica Neue", Helvetica, "Roboto", Arial, "Lucida Grande", "PingFang TC", "蘋果儷中黑", "Apple LiGothic Medium", sans-serif;
+            font-size: 15px;
+            line-height: 18px;
+            color: #464646;
+        }
+
+        .c-section__side+.c-section__main {
+            display: inline-block;
+            vertical-align: top;
+            float: none;
+        }
+
+        .c-post {
+            background: #FFF;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.33);
+        }
+    </style>
+
+    <!-- css files -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <!-- bootstrap css -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <!-- custom css -->
+    <link href="css/fontawesome-all.css" rel="stylesheet" />
+    <!-- fontawesome css -->
+    <!-- //css files -->
+
+    <!-- google fonts -->
+    <!-- 載入字體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet" />
+    <!-- //google fonts -->
+
+    <!-- 載入icon -->
+    <link rel="shortcut icon" href="./images/icon.png" />
+    <link rel="bookmark" href="./images/icon.png" />
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <div class="container" style="padding-right: 0px">
+            <!-- nav -->
+            <nav class="py-md-4 py-3">
+                <div id="logo">
+                    <h1 class="mt-md-0 mt-2">
+                        <a href="index.html"><img src="./images/icon.png" class="icon_triplight" />
+                            TripLight
+                        </a>
+                    </h1>
+                </div>
+                <label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
+                <input type="checkbox" id="drop" />
+                <ul class="menu ml-auto mt-1">
+                    <li class=""><a href="index.html">首頁</a></li>
+                    <li class=""><a href="booking.html">AI行程規劃</a></li>
+                    <li class=""><a href="tickets.html">票券</a></li>
+                    <li class=""><a href="packages.html">套裝行程</a></li>
+                    <li class="active"><a href="articles.html">旅遊文章</a></li>
+                    <li class="booking"><a href="" id="login">登入/註冊</a></li>
+                    <li class="">
+                        <a href="shopping_car.html"><img src="./images/shoppingCar.svg" alt="" style="width: 2em" /></a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- //nav -->
+        </div>
+    </header>
+    <!-- //header -->
+    <!-- 登入 -->
+
+    <div id="login-container">
+        <!---container--->
+
+        <div class="main-box login">
+            <h3>登入</h3>
+            <form action="">
+                <div class="input-box">
+                    <i class="fas fa-envelope icon2"></i>
+                    <input type="email" name="email" required />
+                    <label for="">信箱</label>
+                </div>
+                <div class="input-box">
+                    <i class="fas fa-lock icon2"></i>
+                    <input type="password" name="password" required />
+                    <label for="">密碼</label>
+                </div>
+                <div class="check">
+                    <label><input type="checkbox" />記住我</label>
+                    <a href="#">忘記密碼</a>
+                </div>
+                <button type="submit" class="main-btn">Login</button>
+                <div class="register">
+                    <p>如果沒有帳號?<a href="#" class="register-link">點擊註冊</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="main-box register">
+            <h3>註冊</h3>
+            <form action="">
+                <div class="input-box">
+                    <i class="fas fa-user icon2"></i>
+                    <input type="email" name="email" required />
+                    <label for="">使用者名稱</label>
+                </div>
+                <div class="input-box">
+                    <i class="fas fa-envelope icon2"></i>
+                    <input type="email" name="email" required />
+                    <label for="">信箱</label>
+                </div>
+                <div class="input-box">
+                    <i class="fas fa-lock icon2"></i>
+                    <input type="password" name="password" required />
+                    <label for="">密碼</label>
+                </div>
+                <div class="check">
+                    <label><input type="checkbox" />我同意所有條款</label>
+                </div>
+                <button type="submit" class="main-btn">註冊</button>
+                <div class="register">
+                    <p>已經有帳號?<a href="#" class="login-link">點擊登入</a></p>
+                </div>
+            </form>
+        </div>
+
+        <span class="close-icon">
+            <div class="fas fa-times"></div>
+        </span>
+    </div>
+
+    <!-- 登入  -->
+
+    <!-- banner -->
+    <section class="banner_inner" id="home">
+        <div class="banner_inner_overlay"></div>
+    </section>
+    <!-- //banner -->
+
+    <!-- tour packages -->
+    <section class="packages pt-5">
+        <div class="container py-lg-4 py-sm-3">
+            <section class="c-section" id="post_627158">
+                <div class="c-section__side">
+                    <div class="c-user ">
+                        <div class="c-user__side">
+                            <div class="usericon userlevel junior">
+                                <span>LV.</span>
+                                28
+                            </div>
+                            <div class="usericon usergp beginner" data-tippy-content="78">
+                                <span>GP</span>
+                                78
+                            </div>
+                            <div class="usericon usercareer" data-tippy-content="初心者">
+                                <img src="https://i2.bahamut.com.tw/forum/icons/noob.png">
+                            </div>
+                            <div class="usericon userrace" data-tippy-content="人類">
+                                <img src="https://i2.bahamut.com.tw/forum/icons/human.png">
+                            </div>
+                        </div>
+                        <a href="//home.gamer.com.tw/A770224" class="c-user__avatar gamercard" target="_blank"
+                            data-gamercard-userid="A770224" aria-expanded="false">
+                            <img class=" lazyloaded"
+                                data-src="https://avatar2.bahamut.com.tw/avataruserpic/a/7/a770224/a770224.png" alt=""
+                                id="avatar_fpath627158"
+                                src="https://avatar2.bahamut.com.tw/avataruserpic/a/7/a770224/a770224.png">
+                        </a>
+                        <div class="c-user__honor" data-userid="A770224" data-honors="">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="c-section__main c-post ">
+                    <div class="c-post__header">
+                        <h1 class="c-post__header__title ">【問題】關於殺狐與奧伯龍</h1>
+                        <div class="tag-category">
+                            <a href="https://forum.gamer.com.tw/B.php?bsn=26742&amp;subbsn=26">
+                                <div class="tag-category_item">繁中專區</div>
+                            </a>
+                        </div>
+                        <div class="c-post__header__author">
+                            <a href="Co.php?bsn=26742&amp;sn=627158&amp;subbsn=26&amp;bPage=0" class="floor tippy-gpbp"
+                                data-floor="1" data-tippy-content="只看此樓">樓主</a>
+                            <a href="//home.gamer.com.tw/A770224" class="username" target="_blank">アンチスパイラル</a>
+                            <a href="//home.gamer.com.tw/A770224" class="userid" target="_blank">A770224</a>
+                            <div class="postcount">
+                                <span class="postgp">GP<span>11</span></span>
+                                <span class="postbp">BP<span>-</span></span>
+                            </div>
+                        </div>
+                        <div class="c-post__header__info">
+                            <a href="javascript:;" class="edittime tippy-post-info" data-hideip="114.37.144.xxx"
+                                data-mtime="2023-03-21 15:12:27" data-area="C" aria-expanded="false">2023-03-21
+                                15:13:30 編輯</a>
+
+
+
+                        </div>
+                    </div>
+                    <div class="c-post__body">
+
+                        <article class="c-article FM-P2" id="cf627158">
+                            <div class="c-article__content">
+                                <div>如果主要紅卡只會用摩根(至少寶三<br><br>那可以只抽殺狐，奧伯龍用隊友的就好嗎（？</div>
+                                <div><br></div>
+                                <div>還是一定要帶一奧伯龍？ 因為我好像看到人家說不能雙奧伯龍，再加上我比較喜歡殺狐ＱＱ</div>
+                                <div><br></div>
+                                <div>阿，我輔助除了CBA都有，職階打手幾乎都是藍卡，紅卡只喜歡摩根ＱＱ</div>
+                            </div>
+                        </article>
+
+
+                        <div class="c-post__body__buttonbar" style="">
+
+                            <div>
+                                <div class="gp" style="">
+                                    <button class="ef-btn ef-firework tippy-gpbp"
+                                        onclick="addgpbp(this, 26742, 627158, 1, event)" type="button" id="gp_627158"
+                                        data-tippy-content="GP 讓勇者獲得能量! <br>1 GP＝- 2 巴幣，原作者可分紅">
+                                        <div class="ef-btn__effect">
+                                            <i class="icon material-icons"></i>
+                                            <div class="effect-group">
+                                                <span class="effect"></span>
+                                                <span class="effect"></span>
+                                                <span class="effect"></span>
+                                                <span class="effect"></span>
+                                                <span class="effect"></span>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <a class="count tippy-gpbp-list" href="javascript:;"
+                                        data-tippy="{&quot;bsn&quot;:26742,&quot;sn&quot;:627158,&quot;type&quot;:1}"
+                                        aria-expanded="false">11</a>
+                                </div>
+                                <div class="bp" style="">
+                                    <button class="ef-btn ef-bounce tippy-gpbp"
+                                        onclick="addgpbp(this, 26742, 627158, 2, event)" type="button" id="bp_627158"
+                                        data-tippy-content="BP 讓文章削弱光芒! <br>1 BP＝- 2 巴幣">
+                                        <div class="ef-btn__effect">
+                                            <i class="icon material-icons"></i>
+                                        </div>
+                                    </button>
+                                    <a class="count tippy-gpbp-list" href="javascript:;"
+                                        data-tippy="{&quot;bsn&quot;:26742,&quot;sn&quot;:627158,&quot;type&quot;:2}"
+                                        aria-expanded="false">-</a>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="article-footer_right">
+                                    <a class="article-footer_right-btn" style="" href="javascript:;"
+                                        onclick="location.href='post1.php?bsn=26742&amp;type=2&amp;re=1&amp;snA=75301&amp;sn=627158&amp;subbsn={thread.subbsn}&amp;re=1'">
+                                        <img src="https://i2.bahamut.com.tw/icon/msg_regular.png"
+                                            data-src="https://i2.bahamut.com.tw/icon/msg_regular.png"
+                                            data-hover-src="https://i2.bahamut.com.tw/icon/msg_regular_active.png">
+                                        <p>回覆</p>
+                                    </a>
+                                    <div class="more">
+                                        <button class="tippy-option-menu"
+                                            data-tippy="{&quot;bsn&quot;:26742,&quot;snA&quot;:75301,&quot;sn&quot;:&quot;627158&quot;,&quot;author&quot;:&quot;A770224&quot;,&quot;title&quot;:&quot;\u3010\u554f\u984c\u3011\u95dc\u65bc\u6bba\u72d0\u8207\u5967\u4f2f\u9f8d&quot;,&quot;dc_c1&quot;:&quot;22734&quot;,&quot;dc_c2&quot;:&quot;0&quot;,&quot;dc_type&quot;:&quot;7&quot;,&quot;dc_machine&quot;:&quot;25174016,0&quot;,&quot;dc_name&quot;:&quot;Fate\/Grand Order&quot;,&quot;subbsn&quot;:26,&quot;isLogin&quot;:true,&quot;noReward&quot;:false,&quot;isBM&quot;:0,&quot;owner&quot;:false,&quot;readingAuthor&quot;:null,&quot;area&quot;:&quot;C&quot;,&quot;canEdit&quot;:null,&quot;parent&quot;:0,&quot;donateIsOpen&quot;:false}"
+                                            type="button" aria-expanded="false">
+                                            <i class="material-icons"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="c-post__footer c-reply">
+                        <div class="c-reply__head nocontent">
+                            <a id="showoldCommend_627158" href="javascript:;" onclick="extendComment(26742, 627158);"
+                                class="more-reply">
+                                <i class="material-icons"></i>
+                                <span>還有 180 則留言</span>
+                            </a>
+                            <a class="hide-reply is-hide" id="closeCommend_627158" href="javascript:;"
+                                onclick="foldedComment(627158)">
+                                <i class="material-icons"></i>
+                                <span>收合留言</span>
+                            </a>
+                            <div class="old-reply" id="moreCommentBtn_627158" style="display:none"><a
+                                    href="javascript:;" onclick="extendComment(26742, 627158);">顯示舊留言</a></div>
+                        </div>
+                        <div id="Commendlist_627158">
+                            <div class="c-reply__item" id="Commendcontent_3377029" name="comment_parent"
+                                data-comment="{&quot;bsn&quot;:26742,&quot;snB&quot;:627158,&quot;sn&quot;:3377029,&quot;isLogin&quot;:true,&quot;deletable&quot;:false,&quot;editable&quot;:false,&quot;content&quot;:&quot;\u771f\u7684\u8981\u8aaa\u4f60\u6c92\u6709\u5967\u4f2f\u9f8d\u73a9\u4e0d\u4e86\u9802\u5c16\u7d05\u5361\u968a \u4f46\u6c92\u6bba\u72d0\u5c31\u4e0d\u8981\u73a9\u7d05\u5361\u968a&quot;}">
+                                <div>
+                                    <button type="button" class="more tippy-reply-menu" aria-expanded="false">
+                                        <i class="material-icons"></i>
+                                    </button>
+                                    <a class="reply-avatar user--sm" href="//home.gamer.com.tw/wayne1004"
+                                        target="_blank"><img class="gamercard lazyloaded"
+                                            data-src="https://avatar2.bahamut.com.tw/avataruserpic/w/a/wayne1004/wayne1004_s.png"
+                                            data-gamercard-userid="wayne1004"
+                                            src="https://avatar2.bahamut.com.tw/avataruserpic/w/a/wayne1004/wayne1004_s.png"></a>
+                                    <div class="reply-content">
+                                        <a class="reply-content__user" href="//home.gamer.com.tw/wayne1004"
+                                            target="_blank">Betalking</a>
+                                        <article class="reply-content__article c-article "><span
+                                                class="comment_hot-tag">HOT</span><span class="comment_content"
+                                                data-formatted="yes">真的要說你沒有奧伯龍玩不了頂尖紅卡隊 但沒殺狐就不要玩紅卡隊</span></article>
+
+                                        <div class="reply-content__footer">
+                                            <div class="edittime" style="margin-right:6px;" name="comment_floor">B5
+                                            </div>
+                                            <div class="edittime" data-tippy-content="留言時間 2023-03-21 15:20:00">
+                                                2023-03-21 15:20:00</div>
+                                            <div class="buttonbar">
+                                                <button type="button" onclick="Forum.C.commentGp(this);"
+                                                    class="gp is-highlight" title="推一個！"><i
+                                                        class="material-icons"></i></button>
+                                                <a data-gp="105" href="javascript:;" class="gp-count is-highlight"
+                                                    aria-expanded="false">105</a>
+                                                <button type="button" onclick="Forum.C.commentBp(this);" class="bp"
+                                                    title="我要噓…"><i class="material-icons"></i></button>
+                                                <a data-bp="1" href="javascript:;" class="bp-count"></a>
+                                                <button class="tag" type="button"
+                                                    onclick="Forum.C.replyToFloor(627158, 3377029, 5);">回覆</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="c-reply__item" id="Commendcontent_3377084" name="comment_parent"
+                                data-comment="{&quot;bsn&quot;:26742,&quot;snB&quot;:627158,&quot;sn&quot;:3377084,&quot;isLogin&quot;:true,&quot;deletable&quot;:false,&quot;editable&quot;:false,&quot;content&quot;:&quot;#B27:3377080# \u4f60\u75283\u6280\u4e00\u5b9a\u90fd\u662f\u6700\u5f8c\u4e00\u6ce2\u6536\u5c3e\u6642\u624d\u7528\u7684\uff0c\u800c\u4f60\u5df2\u7d93\u5728\u9019T\u628a\u5c0d\u9762\u6e05\u6389\u8d0f\u4e86\uff0c\u90a3\u4e4b\u5f8c\u7684\u6c38\u7720\u6839\u672c\u4e0d\u75db\u4e0d\u7662&quot;,&quot;B27&quot;:&quot;\u30a2\u30f3\u30c1\u30b9\u30d1\u30a4\u30e9\u30eb&quot;}">
+                                <div>
+                                    <button type="button" class="more tippy-reply-menu" aria-expanded="false">
+                                        <i class="material-icons"></i>
+                                    </button>
+                                    <a class="reply-avatar user--sm" href="//home.gamer.com.tw/shlam100"
+                                        target="_blank"><img class="gamercard lazyloaded"
+                                            data-src="https://avatar2.bahamut.com.tw/avataruserpic/s/h/shlam100/shlam100_s.png"
+                                            data-gamercard-userid="shlam100"
+                                            src="https://avatar2.bahamut.com.tw/avataruserpic/s/h/shlam100/shlam100_s.png"></a>
+                                    <div class="reply-content">
+                                        <a class="reply-content__user" href="//home.gamer.com.tw/shlam100"
+                                            target="_blank">matt</a>
+                                        <article class="reply-content__article c-article "><span
+                                                class="comment_hot-tag">HOT</span><span class="comment_content"
+                                                data-formatted="yes"><a
+                                                    href="javascript:Forum.C.openCommentDialog(26742, 627158,3377080);">B27(アンチスパイラル)</a>
+                                                你用3技一定都是最後一波收尾時才用的，而你已經在這T把對面清掉贏了，那之後的永眠根本不痛不癢</span></article>
+
+                                        <div class="reply-content__footer">
+                                            <div class="edittime" style="margin-right:6px;" name="comment_floor">B29
+                                            </div>
+                                            <div class="edittime" data-tippy-content="留言時間 2023-03-21 16:22:54">
+                                                2023-03-21 16:24:22 編輯</div>
+                                            <div class="buttonbar">
+                                                <button type="button" onclick="Forum.C.commentGp(this);"
+                                                    class="gp is-highlight" title="推一個！"><i
+                                                        class="material-icons"></i></button>
+                                                <a data-gp="26" href="javascript:;" class="gp-count is-highlight"
+                                                    aria-expanded="false">26</a>
+                                                <button type="button" onclick="Forum.C.commentBp(this);" class="bp"
+                                                    title="我要噓…"><i class="material-icons"></i></button>
+                                                <a data-bp="1" href="javascript:;" class="bp-count"></a>
+                                                <button class="tag" type="button"
+                                                    onclick="Forum.C.replyToFloor(627158, 3377084, 29);">回覆</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="c-reply__item" id="Commendcontent_3377045" name="comment_parent"
+                                data-comment="{&quot;bsn&quot;:26742,&quot;snB&quot;:627158,&quot;sn&quot;:3377045,&quot;isLogin&quot;:true,&quot;deletable&quot;:false,&quot;editable&quot;:false,&quot;content&quot;:&quot;\u771f\u5fc3\u5efa\u8b70\u4f60\u6bba\u72d0\u8ddf\u5967\u4f2f\u9f8d\u8981\u62bd\u4e00\u96bb\uff0c\u4e0d\u540c\u95dc\u5361\u6253\u624b\u4e00\u76f4\u63db\u4f86\u63db\u53bb\uff0c\u8f14\u52a9\u771f\u7684\u5c31\u53ea\u7528\u9019\u5e7e\u96bb\u4e86\u3002\u5982\u679c\u53ef\u4ee5\uff0c\u6cf3\u88dd\u5e2b\u5320\u53ef\u4ee5\u62bd\u4e00\u96bb\u3002&quot;}">
+                                <div>
+                                    <button type="button" class="more tippy-reply-menu" aria-expanded="false">
+                                        <i class="material-icons"></i>
+                                    </button>
+                                    <a class="reply-avatar user--sm" href="//home.gamer.com.tw/qweethide"
+                                        target="_blank"><img class="gamercard lazyloaded"
+                                            data-src="https://avatar2.bahamut.com.tw/avataruserpic/q/w/qweethide/qweethide_s.png"
+                                            data-gamercard-userid="qweethide"
+                                            src="https://avatar2.bahamut.com.tw/avataruserpic/q/w/qweethide/qweethide_s.png"></a>
+                                    <div class="reply-content">
+                                        <a class="reply-content__user" href="//home.gamer.com.tw/qweethide"
+                                            target="_blank">信奉焰犽教的忠貞騎士</a>
+                                        <article class="reply-content__article c-article "><span
+                                                class="comment_hot-tag">HOT</span><span class="comment_content"
+                                                data-formatted="yes">真心建議你殺狐跟奧伯龍要抽一隻，不同關卡打手一直換來換去，輔助真的就只用這幾隻了。如果可以，泳裝師匠可以抽一隻。</span>
+                                        </article>
+
+                                        <div class="reply-content__footer">
+                                            <div class="edittime" style="margin-right:6px;" name="comment_floor">B14
+                                            </div>
+                                            <div class="edittime" data-tippy-content="留言時間 2023-03-21 15:32:36">
+                                                2023-03-21 15:32:36</div>
+                                            <div class="buttonbar">
+                                                <button type="button" onclick="Forum.C.commentGp(this);"
+                                                    class="gp is-highlight" title="推一個！"><i
+                                                        class="material-icons"></i></button>
+                                                <a data-gp="20" href="javascript:;" class="gp-count is-highlight"
+                                                    aria-expanded="false">20</a>
+                                                <button type="button" onclick="Forum.C.commentBp(this);" class="bp"
+                                                    title="我要噓…"><i class="material-icons"></i></button>
+                                                <a data-bp="0" href="javascript:;" class="bp-count"></a>
+                                                <button class="tag" type="button"
+                                                    onclick="Forum.C.replyToFloor(627158, 3377045, 14);">回覆</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="c-reply__item" id="Commendcontent_3408510" name="comment_parent"
+                                data-comment="{&quot;bsn&quot;:26742,&quot;snB&quot;:627158,&quot;sn&quot;:3408510,&quot;isLogin&quot;:true,&quot;deletable&quot;:false,&quot;editable&quot;:false,&quot;content&quot;:&quot;#B183:3408505# \u78ba\u5be6\uff5e\u827e\u857e\u80fd\u7528\u5230\u7684\u5834\u5408\u504f\u5c11\uff0c\u50cf\u6211\u73fe\u5728\u90fd\u662f\u786c\u5e36\u827e\u857e\u4e0a\u5834\uff0c\u642d\u914d\u8853\u50bb\u3001\u4ec7\u51dc\u52c9\u5f373T XDD&quot;,&quot;B183&quot;:&quot;BAT&quot;}">
+                                <div>
+                                    <button type="button" class="more tippy-reply-menu" aria-expanded="false">
+                                        <i class="material-icons"></i>
+                                    </button>
+                                    <a class="reply-avatar user--sm" href="//home.gamer.com.tw/yjnytrme"
+                                        target="_blank"><img class="gamercard lazyloaded"
+                                            data-src="https://avatar2.bahamut.com.tw/avataruserpic/y/j/yjnytrme/yjnytrme_s.png"
+                                            data-gamercard-userid="yjnytrme"
+                                            src="https://avatar2.bahamut.com.tw/avataruserpic/y/j/yjnytrme/yjnytrme_s.png"></a>
+                                    <div class="reply-content">
+                                        <a class="reply-content__user" href="//home.gamer.com.tw/yjnytrme"
+                                            target="_blank">wayne</a>
+                                        <article class="reply-content__article c-article "><span class="comment_content"
+                                                data-formatted="yes"><a
+                                                    href="javascript:Forum.C.openCommentDialog(26742, 627158,3408505);">B183(BAT)</a>
+                                                確實～艾蕾能用到的場合偏少，像我現在都是硬帶艾蕾上場，搭配術傻、仇凜勉強3T XDD</span></article>
+
+                                        <div class="reply-content__footer">
+                                            <div class="edittime" style="margin-right:6px;" name="comment_floor">
+                                                B184</div>
+                                            <div class="edittime" data-tippy-content="留言時間 2023-05-13 15:05:45">
+                                                2023-05-13 15:05:45</div>
+                                            <div class="buttonbar">
+                                                <button type="button" onclick="Forum.C.commentGp(this);" class="gp"
+                                                    title="推一個！"><i class="material-icons"></i></button>
+                                                <a data-gp="0" href="javascript:;" class="gp-count"></a>
+                                                <button type="button" onclick="Forum.C.commentBp(this);" class="bp"
+                                                    title="我要噓…"><i class="material-icons"></i></button>
+                                                <a data-bp="0" href="javascript:;" class="bp-count"></a>
+                                                <button class="tag" type="button"
+                                                    onclick="Forum.C.replyToFloor(627158, 3408510, 184);">回覆</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="c-reply__item" id="Commendcontent_3411317" name="comment_parent"
+                                data-comment="{&quot;bsn&quot;:26742,&quot;snB&quot;:627158,&quot;sn&quot;:3411317,&quot;isLogin&quot;:true,&quot;deletable&quot;:false,&quot;editable&quot;:false,&quot;content&quot;:&quot;\u9084\u662f\u4e00\u53e5\u8a71\uff0c\u6709\u9810\u7b97\u5c31\u6700\u597d\u90fd\u62bd\u4e00\u96bb\u51fa\u4f86\uff0c\u6709\u5099\u7121\u60a3\u3002\u800c\u4e14\u5982\u679c\u81ea\u5df1\u6c92\u6709\u6fb3\u4f2f\u9f8d\u5e36\u597d\u53cb\u7684\u7b49\u65bc\u662f\u4e0d\u80fd\u914d\u4e0a\u96d9\u6bba\u72d0+\u6fb3\u4f2f\u9f8d\u6bc0\u5929\u6ec5\u5730\u7684\u7d44\u5408\uff08\u9700\u63db\u4eba\u88e1\u88dd\uff09&quot;}">
+                                <div>
+                                    <button type="button" class="more tippy-reply-menu" aria-expanded="false">
+                                        <i class="material-icons"></i>
+                                    </button>
+                                    <a class="reply-avatar user--sm" href="//home.gamer.com.tw/shana00"
+                                        target="_blank"><img class="gamercard lazyloaded"
+                                            data-src="https://avatar2.bahamut.com.tw/avataruserpic/s/h/shana00/shana00_s.png"
+                                            data-gamercard-userid="shana00"
+                                            src="https://avatar2.bahamut.com.tw/avataruserpic/s/h/shana00/shana00_s.png"></a>
+                                    <div class="reply-content">
+                                        <a class="reply-content__user" href="//home.gamer.com.tw/shana00"
+                                            target="_blank">灼光之約</a>
+                                        <article class="reply-content__article c-article "><span class="comment_content"
+                                                data-formatted="yes">還是一句話，有預算就最好都抽一隻出來，有備無患。而且如果自己沒有澳伯龍帶好友的等於是不能配上雙殺狐+澳伯龍毀天滅地的組合（需換人裡裝）</span>
+                                        </article>
+
+                                        <div class="reply-content__footer">
+                                            <div class="edittime" style="margin-right:6px;" name="comment_floor">
+                                                B185</div>
+                                            <div class="edittime" data-tippy-content="留言時間 2023-05-18 14:41:30">
+                                                2023-05-18 14:41:30</div>
+                                            <div class="buttonbar">
+                                                <button type="button" onclick="Forum.C.commentGp(this);" class="gp"
+                                                    title="推一個！"><i class="material-icons"></i></button>
+                                                <a data-gp="0" href="javascript:;" class="gp-count"></a>
+                                                <button type="button" onclick="Forum.C.commentBp(this);" class="bp"
+                                                    title="我要噓…"><i class="material-icons"></i></button>
+                                                <a data-bp="0" href="javascript:;" class="bp-count"></a>
+                                                <button class="tag" type="button"
+                                                    onclick="Forum.C.replyToFloor(627158, 3411317, 185);">回覆</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <!-- tour packages -->
+
+    <!-- destinations -->
+    <section class="destinations py-5" id="destinations">
+        <div class="container py-xl-5 py-lg-3">
+            <h3 class="heading text-capitalize text-center">
+                旅遊文章專欄下半區塊
+            </h3>
+            <p class="text mt-2 mb-5 text-center">
+                自己想內容，加油!自己想內容，加油!自己想內容，加油!自己想內容，加油!
+                自己想內容，加油!自己想內容，加油!自己想內容，加油!自己想內容，加油!
+                自己想內容，加油!自己想內容，加油!自己想內容，加油!自己想內容，加油!
+                自己想內容，加油!自己想內容，加油!自己想內容，加油!自己想內容，加油!
+                自己想內容，加油!自己想內容，加油!自己想內容，加油!自己想內容，加油!
+                自己想內容，加油!自己想內容，加油!自己想內容，加油!自己想內容，加油!
+                自己想內容，加油!自己想內容，加油!自己想內容，加油!自己想內容，加油!
+            </p>
+        </div>
+    </section>
+    <!-- destinations -->
+
+    <!--footer -->
+    <footer>
+        <section class="footer footer_w3layouts_section_1its py-5">
+            <div class="container py-lg-4 py-3">
+                <div class="row footer-top">
+                    <div class="col-lg-3 col-sm-6 footer-grid_section_1its_w3">
+                        <div class="footer-title">
+                            <h3>地點資訊</h3>
+                        </div>
+                        <div class="row">
+                            <ul class="col-12 links">
+                                <li>
+                                    <a href="https://www.google.com/maps?q=桃園市中壢區復興路46號9樓"
+                                        target="_blank">地址：桃園市中壢區復興路46號9樓</a>
+                                </li>
+                                <li><a href="tel:02-1234-5678">電話：02-1234-5678</a></li>
+                                <li>
+                                    <a href="mailto:contact@example.com">信箱：triplirht@gmail.com</a>
+                                </li>
+                                <li><a href="tel:02-1234-5678">傳真：02-1234-5678</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 footer-grid_section mt-sm-0 mt-4">
+                        <div class="footer-title">
+                            <h3>認識TripLight</h3>
+                        </div>
+                        <div class="row">
+                            <ul class="col-10 links">
+                                <li><a href="about.html" class="scroll">關於我們</a></li>
+                                <li>
+                                    <a href="user_terms.html" class="scroll">使用者條款 </a>
+                                </li>
+                                <li>
+                                    <a href="privacy_policy.html" class="scroll">隱私權保護政策</a>
+                                </li>
+                                <li><a href="faq.html" class="scroll"> 常見問題與幫助</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mt-lg-0 mt-4 footer-grid_section_1its_w3">
+                        <div class="footer-title">
+                            <h3>成為合作夥伴</h3>
+                        </div>
+                        <div class="row">
+                            <ul class="col-6 links">
+                                <li>
+                                    <a href="supplier_form.html" class="scroll">成為供應商</a>
+                                </li>
+                                <li>
+                                    <a href="blogger_photographer.html" class="scroll">部落客/攝影師合作計畫</a>
+                                </li>
+                                <li>
+                                    <a href="group_form.html" class="scroll">團體客製規劃</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mt-lg-0 mt-4 footer-grid_section_1its_w3">
+                        <div class="footer-title">
+                            <h3>聯絡我們</h3>
+                        </div>
+                        <ul class="social_section_1info">
+                            <li>
+                                <a href="https://www.facebook.com/TibaMe"><img src="./images/facebook.svg"
+                                        alt="facebook" /></a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/tibame_wiedu/"><img src="./images/instagram.svg"
+                                        alt="instagram" /></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/"><img src="./images/twitter.svg" alt="twitter" /></a>
+                            </li>
+                            <li class="youtube">
+                                <a href="https://www.youtube.com/channel/UClhecf7eOGHwbKW5e7l_pTA"><img
+                                        src="./images/youtube.svg" alt="youtube" /></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <!-- //footer -->
+
+    <!-- copyright -->
+    <div class="copyright py-3 text-center">
+        <p>COPYRIGHT © 2023 TripLight All rights reserved.</p>
+    </div>
+    <!-- //copyright -->
+
+    <!-- move top -->
+    <div class="move-top text-right">
+        <a href="#home" class="move-top">
+            <span class="fa fa-angle-up mb-3" aria-hidden="true"></span>
+        </a>
+    </div>
+    <!-- move top -->
+</body>
+<!-- login顯示 -->
+<script src="/js/Login.js"></script>
+<!-- login顯示 -->
+
+</html>
