@@ -87,22 +87,25 @@
                 <ul class="member_list">
                     <li class="member_li"><a href="login.html"><i class="fa-regular fa-user"></i>管理帳戶</a>
                     </li>
-                    <li class="member_li" id="order_li"><a href="#"><i class="fa-solid fa-plane"></i>訂單管理</a>
+                    <li class="member_li" id="order_li"><a href=""><i class="fa-solid fa-plane"></i>訂單管理</a>
                         <ul class="order_list">
                             <li class="order_content"><a href="tickets_order.html"><i
                                         class="fa-solid fa-ticket"></i>票券訂單</a></li>
-                            <li class="order_content"><a href="https://www.google.com"><i
+                            <li class="order_content"><a href="group_order.html"><i
                                         class="fa-solid fa-suitcase"></i>旅遊團訂單</a>
                             </li>
                         </ul>
                     </li>
                     <li class="member_li"><a href="my_favorite.html"><i class="fa-regular fa-heart"></i>我的收藏</a></li>
                     <li class="member_li"><a href="comment.html"><i class="fa-solid fa-pen-to-square"></i>我的評價</a></li>
-                    <li class="member_li"><a href="https://www.google.com"><i class="fa-solid fa-copy"></i>我的文章</a></li>
+                    <li class="member_li"><a href="article_myfavorite.html"><i class="fa-solid fa-copy"></i>我的文章</a>
+                    </li>
                     <li class="member_li"><a href="membership_rating.html"><i class="fa-regular fa-gem"></i>會員分級</a>
                     </li>
                     <li class="member_li"><a href="coupon.html"><i class="fa-solid fa-sack-dollar"></i>優惠碼</a></li>
-                    <li class="member_li"><a href="https://www.google.com"><i class="fa-regular fa-comment"></i>提出問題</a>
+                    <li class="member_li"><a href="question_form.html"><i class="fa-regular fa-comment"></i>提出問題</a>
+                    </li>
+                    <li class="member_li"><a href="https://www.google.com"><i class="fa-regular fa-comment"></i>查看問題</a>
                     </li>
                     <li class="member_li"><a href="https://www.google.com"><i
                                 class="fa-solid fa-right-from-bracket"></i>登出</a>
@@ -203,20 +206,21 @@
                     <button id="camera"><i class="fa-solid fa-camera"></i></button>
                     <ul class="list-group list-group-flush mt-3">
                         <li class="list-group-item"><a href="login.html">管理帳戶</a></li>
-                        <li id="order_li2" class="list-group-item"><a href="#">訂單管理</a>
+                        <li id="order_li2" class="list-group-item"><a href="">訂單管理</a>
                             <ul id="order_list2">
                                 <li id="order_content1" class="list-group-item"><a href="tickets_order.html">票券訂單</a>
                                 </li>
-                                <li id="order_content2" class="list-group-item"><a
-                                        href="https://www.google.com">旅遊團訂單</a></li>
+                                <li id="order_content2" class="list-group-item"><a href="group_order.html">旅遊團訂單</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="list-group-item"><a href="my_favorite.html">我的收藏</a></li>
                         <li class="list-group-item"><a href="comment.html">我的評價</a></li>
-                        <li class="list-group-item"><a href="#">我的文章</a></li>
+                        <li class="list-group-item"><a href="article_myfavorite.html">我的文章</a></li>
                         <li class="list-group-item"><a href="membership_rating.html">會員分級</a></li>
                         <li class="list-group-item"><a href="coupon.html">優惠碼</a></li>
-                        <li class="list-group-item"><a href="#">提出問題</a></li>
+                        <li class="list-group-item"><a href="question_form.html">提出問題</a></li>
+                        <li class="list-group-item"><a href="#">查看問題</a></li>
                     </ul>
                 </div>
             </div>
@@ -239,7 +243,7 @@
 
                     <div class="tab-content">
 
-                        <!-- 票券訂單<分頁 -->
+                        <!-- 票券評價<分頁 -->
                         <div class="tab-pane fade show active" id="ticker_order">
 
                             <!-- 第一排 -->
@@ -248,7 +252,7 @@
                                     <option selected></option>
                                     <option></option>
                                 </select>
-                                <div class="no_comment_div" id="no_comment_id">
+                                <div class="no_comment_div">
                                     <div class="no_comment">趕快幫我們評價吧</div>
                                 </div>
                             </div>
@@ -266,56 +270,8 @@
                                 <option></option>
                             </select>
                         </div>
-                        <!-- <div class="no_comment_div" id="no_comment_id">
+                        <div class="no_comment_div">
                             <div class="no_comment">趕快幫我們評價吧</div>
-                        </div> -->
-                        <div class="ticket_item_class">
-                            <a href="https://www.kkday.com/zh-tw/product/142053-thredbo-resort-ski-snowboard-day-tour-from-haymarket-parramatta-australia"
-                                class="orderurl">
-                                <div class="item_img_class">
-                                    <img src="https://blog.asiayo.com/wp-content/uploads/67817447_xl-1.jpg"
-                                        class="item_img">
-                                </div>
-                                <div class="item_commend_class">
-                                    <i class="fa-solid fa-pen-to-square">我要評論</i>
-                                </div>
-                                <div class="item_content">
-                                    <h1 class="item_title">票券評論</h1>
-                                    <div class="box">
-                                        <p class="Number">
-                                            簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介
-                                        </p>
-                                    </div>
-                                    <div class="date_div">
-                                        <p class="date">2020/02/02</p>
-                                    </div>
-                                </div>
-
-                            </a>
-                        </div>
-                        <div class="ticket_item_class">
-                            <a href="https://www.kkday.com/zh-tw/product/142053-thredbo-resort-ski-snowboard-day-tour-from-haymarket-parramatta-australia"
-                                class="orderurl">
-                                <div class="item_img_class">
-                                    <img src="https://blog.asiayo.com/wp-content/uploads/67817447_xl-1.jpg"
-                                        class="item_img">
-                                </div>
-                                <div class="item_commend_class">
-                                    <i class="fa-solid fa-pen-to-square">我要評論</i>
-                                </div>
-                                <div class="item_content">
-                                    <h1 class="item_title">票券評論</h1>
-                                    <div class="box">
-                                        <p class="Number">
-                                            簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介簡介
-                                        </p>
-                                    </div>
-                                    <div class="date_div">
-                                        <p class="date">2020/02/02</p>
-                                    </div>
-                                </div>
-
-                            </a>
                         </div>
                     </div>
                 </div>

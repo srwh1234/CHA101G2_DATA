@@ -19,8 +19,29 @@
         rel="stylesheet">
     <script src="jquery-3.7.0.min.js"></script>
     <script src="login.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- 自訂樣式 -->
     <link href="css/TripLight.min.css" rel="stylesheet">
+    <style>
+        #dataTable {
+            white-space: normal;
+            word-break: break-all;
+            white-space: nowrap
+        }
+
+        div.dataTables_wrapper div.dataTables_length select {
+            width: auto;
+            display: inline-block;
+        }
+
+        #dataTable_filter {
+            display: none;
+        }
+
+        .btn-primary {
+            transform: translate(500px, 0px);
+        }
+    </style>
 </head>
 
 <body id="page-top" style="overflow-y: scroll;">
@@ -192,7 +213,77 @@
                     </ul>
                 </nav>
 
-                <h1>待補充</h1>
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">會員資料管理</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr style="position: sticky">
+                                        <th>會員編號</th>
+                                        <th>姓名</th>
+                                        <th>電話</th>
+                                        <th>電子信箱</th>
+                                        <th>生日</th>
+                                        <th>性別</th>
+                                        <th>加入時間</th>
+                                        <th>分級</th>
+                                        <th>會員狀態</th>
+                                        <th>會員狀態修改</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>545</th>
+                                        <th>吳彼得</th>
+                                        <th>0912345678</th>
+                                        <th>aaa@gmail.com</th>
+                                        <th>1960/3/3</th>
+                                        <th>男</th>
+                                        <th>2004/4/24</th>
+                                        <th>2</th>
+                                        <th class="power">啟用</th>
+                                        <th><button type="button" class="btn btn-success">啟用</button>
+                                            <button type="button" class="btn btn-danger">停權</button>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>547</th>
+                                        <th>吳彼得</th>
+                                        <th>0912345678</th>
+                                        <th>aaa@gmail.com</th>
+                                        <th>1960/3/3</th>
+                                        <th>男</th>
+                                        <th>2004/4/24</th>
+                                        <th>2</th>
+                                        <th class="power">啟用</th>
+                                        <th><button type="button" class="btn btn-success">啟用</button>
+                                            <button type="button" class="btn btn-danger">停權</button>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>548</th>
+                                        <th>吳彼得</th>
+                                        <th>0912345678</th>
+                                        <th>aaa@gmail.com</th>
+                                        <th>1960/3/3</th>
+                                        <th>男</th>
+                                        <th>2004/4/24</th>
+                                        <th>2</th>
+                                        <th class="power">啟用</th>
+                                        <th><button type="button" class="btn btn-success">啟用</button>
+                                            <button type="button" class="btn btn-danger">停權</button>
+                                        </th>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
 
                 <!-- Bootstrap 核心 JavaScript -->
                 <script src="vendor/jquery/jquery.min.js"></script>
@@ -210,7 +301,46 @@
                 <!-- 頁面級別的自訂腳本 -->
                 <script src="js/demo/chart-area-demo.js"></script>
                 <script src="js/demo/chart-pie-demo.js"></script>
+                <script src="path/to/jquery.min.js"></script>
+                <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+                <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+                <script src="js/demo/datatables-demo.js"></script>
+                <script>
+                    //啟用
+                    const btnSuccessList = document.querySelectorAll(".btn-success");
+                    btnSuccessList.forEach(function (btnSuccess) {
+                        btnSuccess.addEventListener("click", function () {
 
+                            btnSuccess.closest("tr").querySelector(".power").innerText = "啟用";
+                        });
+                    })
+                    //停權
+                    const btnDangerList = document.querySelectorAll(".btn-danger");
+                    btnDangerList.forEach(function (btnDanger) {
+                        btnDanger.addEventListener("click", function () {
+                            swal({
+                                title: "確定要停權嗎",
+                                icon: "warning",
+                                buttons: {
+                                    Btn: false,
+                                    cancel: {
+                                        text: "取消",
+                                        visible: true
+                                    },
+                                    confirm: {
+                                        text: "確定",
+                                        visible: true
+                                    }
+                                }
+                            }).then((value) => {
+                                if (value) {
+                                    btnDanger.closest("tr").querySelector(".power").innerText = "停權";
+                                }
+                            });
+
+                        });
+                    })
+                </script>
 
 </body>
 
