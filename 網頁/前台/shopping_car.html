@@ -468,7 +468,7 @@
   <script src="./js/bootstrap.bundle.min.js"></script>
   <script src="./js/jquery-3.6.4.min.js"></script>
   <script>
-    const result = [];
+    let result = [];
     const coupons = [
       {
         couponId: 1,
@@ -511,6 +511,22 @@
         };
         result.push(ticket_cart);
       }
+
+
+
+      const memberId = 1;
+      fetch(`http://localhost:8080/ticketcart?id=${memberId ?? 0}`)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          result = data;
+          // 渲染頁面
+          render();
+        })
+        .catch(error => console.log(error));
+
+
+
       //刪除品項的按鈕
       $('#btnDeleteConfirm').on('click', function () {
         const post = {
@@ -585,8 +601,14 @@
       //商品清單
       for (let cart of result) {
         let price = cart.ticket.price;
-        price = cart.ticket.promotion?.price;
 
+        if (cart.ticket.promotion) {
+          price = cart.ticket.promotion.price;
+        }
+
+        if(cart.quantity>cart.ticket.available){
+          cart.quantity=cart.ticket.available;
+        }
 
         $('#orderContainer').append(
           `
