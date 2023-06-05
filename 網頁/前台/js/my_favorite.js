@@ -224,19 +224,19 @@ $(".nav-item")
   });
 
 // 接收後台AI行程資料
-// console.log(memberId);
+let memberId = 1;
 function getAiFavorite() {
   $.ajax({
-    url: "/getAiFavorite/" + memberId,
+    url: "/aiFavorite/"+ memberId ,
     method: "GET",
     dataType: "json",
     success: function (aiFavorite) {
       console.log("接收資料");
       console.log(aiFavorite);
-
-      for (let i = 0; i < aiFavorite.length; i++) {
-        $(".tab-pane").eq(3).find("#group_orderselect")
-          .after(`<div class="group_order_item_class">
+      if (!$(".tab-pane").eq(3).find("#group_orderselect").next().hasClass("group_order_item_class")){
+        for (let i = 0; i < aiFavorite.length; i++) {
+          $(".tab-pane").eq(3).find("#group_orderselect")
+              .after(`<div class="group_order_item_class">
           <div class="card-header">
           <div class="card-top">
               <h5 class="text-center">
@@ -265,7 +265,7 @@ function getAiFavorite() {
             </p>
             <p class="ai_description"><i class="fa-solid fa-file-lines"></i> 行程內容：<br>${aiFavorite[i].planningDescription}</p>
           </div>
-          </div>`);
+          </div>`);}
       }
     },
     error: function (error) {
