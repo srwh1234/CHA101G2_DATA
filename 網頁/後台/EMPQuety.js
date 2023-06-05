@@ -37,8 +37,6 @@ $(document).ready(function () {
         var phone = $('#phone').val();
         var permission = $('#permission').val();
 
-        // 做一些修改資料的處理，例如發送 AJAX 請求保存資料
-
         // 關閉修改資料的模態框
         $('#editModal').modal('hide');
 
@@ -51,4 +49,26 @@ $(document).ready(function () {
         $(row).find('td:eq(5)').text(phone);
         $(row).find('td:eq(6)').text(permission);
     });
+
+    // 監聽刪除按鈕的點擊事件
+    $('.btn-delete').click(function () {
+        // 使用 SweetAlert2 彈出確認視窗
+        Swal.fire({
+            title: "確定要刪除嗎？",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "確定",
+            cancelButtonText: "取消",
+            dangerMode: true,
+        }).then((result) => {
+            if (result.value) {
+                // 在這裡執行刪除操作
+                Swal.fire("刪除成功", {
+                    icon: "success",
+                });
+            } else {
+                Swal.fire("已取消刪除");
+            }
+        });
+    })
 });
