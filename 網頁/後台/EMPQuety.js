@@ -50,25 +50,20 @@ $(document).ready(function () {
         $(row).find('td:eq(6)').text(permission);
     });
 
-    // 監聽刪除按鈕的點擊事件
     $('.btn-delete').click(function () {
-        // 使用 SweetAlert2 彈出確認視窗
         Swal.fire({
-            title: "確定要刪除嗎？",
-            icon: "warning",
+            text: "確定刪除嗎?",
             showCancelButton: true,
-            confirmButtonText: "確定",
+            confirmButtonText: "確認",
             cancelButtonText: "取消",
-            dangerMode: true,
         }).then((result) => {
-            if (result.value) {
-                // 在這裡執行刪除操作
-                Swal.fire("刪除成功", {
-                    icon: "success",
-                });
-            } else {
-                Swal.fire("已取消刪除");
+            if (result.isConfirmed) {
+                // 在此處理刪除的邏輯
+                // ...
+
+                // 顯示刪除成功訊息
+                Swal.fire("刪除成功", "", "success");
             }
         });
-    })
+    });
 });
