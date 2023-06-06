@@ -37,7 +37,7 @@ html {
 button,
 input,
 select {
-    -webkit-appearance: none;
+    /* -webkit-appearance: none; */
     outline: none;
     font-family: 'Mukta', sans-serif;
 }
@@ -185,7 +185,7 @@ button:hover {
 .w3l-forms-main-61 .form-bg-blur {
     margin: auto;
     max-width: 430px;
-    background: url(/bg.jpg) no-repeat center;
+    background: url("bg1.jpg") no-repeat center;
     background-size: cover;
     padding: 4em 3em;
     position: relative;
