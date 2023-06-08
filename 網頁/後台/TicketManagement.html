@@ -884,6 +884,7 @@
                 $('#ticketPrice').val(Math.trunc(Math.random() * 1000));
                 $('#ticketCount').val(10);
                 $('#ticketRating').val(4);
+                $('#ticketRatingCount').val(10);
                 $('#ticketCity').val('連江縣');
                 $('#ticketAddress').val('連江縣南竿鄉4-1號');
                 $('#descEditor').summernote('code', '1<br>1<br>1<br>1<br>1<br>1<br>');
@@ -941,19 +942,17 @@
                     body: JSON.stringify(post),
                 })
                     .then(response => response.json())
-                    .then(data => {                       
-                      alert('success');
-                        console.log(data);
+                    .then(data => {   
+                        if(data){
+                            alert('success');
+                        }else{
+                            alert('failure'); 
+                        }
                     })
                     .catch(error => console.log(error))
                     .finally(()=>{
-
-
-                        $('#addTicketModal').modal('hide');
-
-                     
-
-
+                        $('#addTicketModal').modal('hide'); 
+                        doPageSearch(0);
                     });
 
             });
