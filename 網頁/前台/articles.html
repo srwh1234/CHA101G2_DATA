@@ -111,6 +111,37 @@
       display: flex;
       justify-content: flex-end;
     }
+
+    /* 下拉選單容器 */
+    .dropdown-menu {
+      position:absolute;
+      display:inline-flex;
+    }
+
+    /* 下拉選單內容 */
+    .dropdown-menu .dropdown-item {
+      display: none;
+      /* 預設隱藏選項 */
+      padding: 8px 16px;
+      background-color: #f9f9f9;
+      color: #333;
+      text-decoration: none;
+    }
+
+    /* 滑鼠懸停在下拉選單容器上方時，顯示下拉選單內容 */
+    .dropdown-menu:hover .dropdown-item {
+      display: block;
+    }
+
+    /* 調整下拉選單內容位置 */
+    .dropdown-menu .dropdown-item:first-child {
+      margin-top: 8px;
+    }
+
+    /* 調整下拉選單內容之間的間距 */
+    .dropdown-menu .dropdown-item+.dropdown-item {
+      margin-top: 4px;
+    }
   </style>
 
   <!-- header -->
@@ -670,7 +701,7 @@
                 </div>
               </div><textarea class="note-codable" aria-multiline="true"></textarea>
               <div class="note-editable card-block" contenteditable="true" role="textbox" aria-multiline="true"
-                spellcheck="true" autocorrect="true" placeholder="請在此輸入標題" style="height: 300px;">
+                spellcheck="true" autocorrect="true" placeholder="請在此輸入內容" style="height: 300px;">
                 <!-- <p>請在此輸入內容</p> -->
               </div>
             </div><output class="note-status-output" role="status" aria-live="polite"></output>
