@@ -876,7 +876,7 @@
 
             //測試按鈕
             $('#testBtn').on('click', function () {
-                console.log('fff');
+               
                 $('#ticketType').val('主題樂園');
                 $('#ticketSupplier').val('T8Me');
                 $('#ticketExpiryDate').val('2024-12-21');
@@ -895,7 +895,15 @@
                 $('.form-floating .form-select').each((i, v) => renderTextColor(v));
             });
 
-           
+            function convert(base64) {
+                const bineryString = atob(base64.replace(/^data:image\/(png|jpeg|jpg);base64,/, ''));
+                const byteArray = new Uint8Array(bineryString.length);
+
+                for (let i = 0; i < bineryString.length; i++) {
+                    byteArray[i] = bineryString.charAt(i);
+                }
+                return byteArray;
+            }
 
             // 新增的按鈕
             $('#ticketSubmit').on('click', function () {
@@ -914,32 +922,39 @@
                     city: $('#ticketCity').val(),
                     address: $('#ticketAddress').val(),
                     latitude: 0,
-                    longitude: 0,                   
+                    longitude: 0,
                     rating: $('#ticketRating').val(),
-                    ratingPerson:$('#ticketRatingCount').val(), 
+                    ratingPerson: $('#ticketRatingCount').val(),
                     // 從'.img-upload' 取得每個src的值並轉成陣列
-                    images: $('#imgPreview .img-upload').map((i, v) => ($(v).attr('src'))).get(),
+                    images: $('#imgPreview .img-upload').map((i, v) => $(v).attr('src').replace(/^data:image\/(png|jpeg|jpg);base64,/, '')).get(),
                 };
 
                 //TODO: 這邊要判斷資料的正確性
-                console.log(post);
-
+              
+             
                 //發請求
                 fetch(`http://localhost:8080/bk/addticket`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(post),
-            })
-                .then(response => response.json())
-                .then(data => {
-                      console.log(data);                  
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(post),
                 })
-                .catch(error => {
-                    console.log(error);
-                   
-                });
+                    .then(response => response.json())
+                    .then(data => {                       
+                      alert('success');
+                        console.log(data);
+                    })
+                    .catch(error => console.log(error))
+                    .finally(()=>{
+
+
+                        $('#addTicketModal').modal('hide');
+
+                     
+
+
+                    });
 
             });
             // 編輯的按鈕
@@ -959,9 +974,9 @@
                     city: $('#editTicketCity').val(),
                     address: $('#editTicketAddress').val(),
                     latitude: 0,
-                    longitude: 0,                   
+                    longitude: 0,
                     rating: $('#editTicketRating').val(),
-                    ratingPerson:$('#editTicketRatingCount').val(),                  
+                    ratingPerson: $('#editTicketRatingCount').val(),
                     // 從'.img-upload' 取得每個src的值並轉成陣列
                     images: $('#editImgPreview .img-upload').map((i, v) => $(v).attr('src')).get(),
                 };
