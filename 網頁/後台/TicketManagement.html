@@ -53,7 +53,7 @@
 
         /* 避免表格被過度壓縮 */
         .my-th-width {
-            min-width: 9rem;
+            min-width: 12rem;
         }
 
         /* 避免表格被過度壓縮 小按鈕*/
@@ -275,14 +275,14 @@
 
                                     <thead>
                                         <tr>
-                                            <th class="my-th-width-sm" data-field="ticket_id">編號</th>
-                                            <th class="my-th-width-sm" data-field="ticket_name">名稱</th>
-                                            <th class="my-th-width-sm" data-field="ticket_type">類型</th>
-                                            <th class="my-th-width-sm" data-field="ticket_city">縣市</th>
-                                            <th class="my-th-width-sm" data-field="supplier_name">供應商名稱</th>
-                                            <th class="my-th-width-sm" data-field="available">可買數量</th>
-                                            <th class="my-th-width-sm">操作</th>
-                                            <th class="my-th-width-sm">狀態</th>
+                                            <th class="my-th-width-sm">編號</th>
+                                            <th class="my-th-width">名稱</th>
+                                            <th class="my-th-width-sm">類型</th>
+                                            <th class="my-th-width-sm">縣市</th>
+                                            <th class="my-th-width">供應商名稱</th>
+                                            <th class="my-th-width-sm">可買數量</th>
+                                            <th class="my-th-width">操作</th>
+                                            <th class="my-th-width">狀態</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -592,7 +592,7 @@
                             <div class="modal-body">
                                 <div class="form-floating m-3">
                                     <input type="number" class="form-control" id="addTicketCount" min="1" value="1" placeholder=".">
-                                    <label class="my-text-lightgray" for="addTicketCount">增加數量</label>
+                                    <label class="my-text-lightblue" for="addTicketCount">增加數量</label>
                                 </div>
                                 <div class="m-3 d-flex justify-content-end">
                                     <button class="btn btn-primary" id="addTicketCountSubmit">確定</button>
@@ -637,6 +637,7 @@
                     ticketId: 1,
                     ticketName: `票券的名稱#1`,
                     ticketType: '票券類型',
+                    ticketStatus: 1,
                     ticketCity: 'XX市',
                     supplierName: 'KKDay',
                     available: 10, //可買數量
@@ -645,6 +646,7 @@
                     ticketId: 2,
                     ticketName: `票券的名稱#2`,
                     ticketType: '票券類型',
+                    ticketStatus: 1,
                     ticketCity: 'YY市',
                     supplierName: 'KKDay',
                     available: 10, //可買數量
@@ -653,6 +655,7 @@
                     ticketId: 3,
                     ticketName: `票券的名稱#3`,
                     ticketType: '票券類型',
+                    ticketStatus: 0,
                     ticketCity: 'ZZ市',
                     supplierName: 'KKDay',
                     available: 10, //可買數量
@@ -719,7 +722,7 @@
                 }
             });
 
-            //TODO:
+
             //新增票券數量的參數傳遞
             $('#countTicketModal').on('show.bs.modal', function (event) {
                 const button = $(event.relatedTarget);
@@ -727,21 +730,66 @@
                 $('#addTicketCountSubmit').data('ticket-id', ticketId);
             });
 
+            //TODO:新增票券數量
             $('#addTicketCountSubmit').on('click', function () {
+                const post = {
+                    ticketId: parseInt($(this).data('ticket-id')),
+                    addCount: parseInt($('#addTicketCount').val()),
+                }
 
-                const ticketId = $(this).data('ticket-id');
-                const addCount = $('#addTicketCount').val();
-                console.log(ticketId + "/" + addCount);
+                if (post.addCount > 0) {
+                    fetch(`http://localhost:8080/bk/addticketcount`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(post),
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data) {
+                                //變更一下舊的條件 才能強制刷新
+                                oldCondition.page = -1;
+                                doPageSearch(result.curPage);
+                            } else {
+                                doPageSearch(0);
+                            }
+                        })
+                        .catch(error => console.log(error))
+                        .finally(() => {
+                            $('#countTicketModal').modal('hide');
+                        });
+                }
+
+
+
+                $('#addTicketCount').val(1);
             });
 
 
-            $(document).on('change','input[type="radio"]',function(){
-
+            //上架下架
+            $(document).on('change', 'input[type="radio"]', function () {
                 const param = $(this).attr('id').split('_');
-                const ticketId = param[1];
-                const status = param[2];
+                const post = {
+                    ticketId: parseInt(param[1]),
+                    status: parseInt(param[2]),
+                }
 
-                console.log( ticketId +"/"+status);
+                fetch(`http://localhost:8080/bk/enableticket`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(post),
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (!data) { //發生錯誤的時候 刷新頁面
+                            doPageSearch(0);
+                        }
+                    })
+                    .catch(error => console.log(error));
+
             });
 
             //編輯票券的參數傳遞
@@ -1107,11 +1155,13 @@
                     <td>
                         <div class="form-check d-flex">
                             <div class="col">
-                                <input class="form-check-input" type="radio" name="${ticket.ticketId}" id="radio_${ticket.ticketId}_1">
+                                <input class="form-check-input" type="radio"  
+                                    name="${ticket.ticketId}" id="radio_${ticket.ticketId}_1" ${ticket.ticketStatus ? "checked" : ""}>
                                 <label class="form-check-label" for="radio_${ticket.ticketId}_1">上架</label>
                             </div>
                             <div class="col">
-                                <input class="form-check-input" type="radio" name="${ticket.ticketId}" id="radio_${ticket.ticketId}_0" checked>
+                                <input class="form-check-input" type="radio" 
+                                    name="${ticket.ticketId}" id="radio_${ticket.ticketId}_0" ${ticket.ticketStatus ? "" : "checked"}>
                                 <label class="form-check-label" for="radio_${ticket.ticketId}_0">下架</label>
                             </div>
                         </div>                           
