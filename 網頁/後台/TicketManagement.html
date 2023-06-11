@@ -941,8 +941,7 @@
                     ratingPerson: $('#editTicketRatingCount').val(),
                     // 從'.img-upload' 取得每個src的值並轉成陣列
                     images: $('#editImgPreview .img-upload').map(
-                        (i, v) => $(v).attr('src').replace(/^data:image\/(png|jpeg|jpg|gif);base64,/, '')).get(),
-
+                        (i, v) => $(v).attr('src').replace(/^data:image\/(png|jpeg|jpg|gif);base64,/, '')).get(),                   
                 };
 
                 //判斷資料的正確性
@@ -965,7 +964,7 @@
                             Swal.fire({
                                 icon: 'success',
                                 title: '編輯成功',
-                            });                           
+                            });
                         } else {
                             Swal.fire({
                                 icon: 'error',
@@ -1345,13 +1344,13 @@
 
         //將base64轉 Uint8Array
         function convert(base64) {
-            const base64String = base64.replace(/^data:image\/(png|jpeg|jpg);base64,/, '');
+            const base64String = base64.replace(/^data:image\/(png|jpeg|jpg|gif);base64,/, '');
             const bineryString = atob(base64String);
             const byteArray = new Uint8Array(bineryString.length);
 
             for (let i = 0; i < bineryString.length; i++) {
                 byteArray[i] = bineryString.charAt(i);
-            }
+            }           
             return byteArray;
         }
 
