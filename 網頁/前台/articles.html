@@ -111,21 +111,17 @@
       display: flex;
       justify-content: flex-end;
     }
-
+/* 
     /* 下拉選單容器 */
     .dropdown-menu {
-      position:static;
-      display:flex;
+      position:absolute;
+      display:inline;
     }
 
     /* 下拉選單內容 */
     .dropdown-menu .dropdown-item {
       display: none;
       /* 預設隱藏選項 */
-      padding: 8px 16px;
-      background-color: #f9f9f9;
-      color: #333;
-      text-decoration: none;
     }
 
     /* 滑鼠懸停在下拉選單容器上方時，顯示下拉選單內容 */
@@ -142,6 +138,7 @@
     .dropdown-menu .dropdown-item+.dropdown-item {
       margin-top: 4px;
     }
+     
   </style>
 
   <!-- header -->
@@ -301,8 +298,9 @@
   <div class="d-flex justify-content-center">
     <div class="d-flex align-items-between">
       <div class="input-group mb-2" style="margin-top: 30px">
-        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-          aria-expanded="false" class="btn btn-outline-secondary" style="width: 200px;">標題</button>
+        <!-- <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+          aria-expanded="false" class="btn btn-outline-secondary" style="width: 160px;">分類</button> -->
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 160px;">快速查詢</button>
         <ul class="dropdown-menu">
           <li><a class="dropdown-item" href="#">全部</a></li>
           <li><a class="dropdown-item" href="#">食記</a></li>
@@ -328,7 +326,7 @@
   <section class="packages pt-5 border-bottom">
     <div class="container py-lg-4 py-sm-3">
       <div class="my-3">
-        <div class="h2">文章專區</div>
+        <div class="h2">最新文章</div>
         <!-- 一行4個卡片 -->
         <div class="row row-cols-4 g-2">
           <!-- class 內有my-nav-link 則點選元素 會跳轉到href指定的位置-->
