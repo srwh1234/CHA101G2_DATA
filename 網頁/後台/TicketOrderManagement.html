@@ -153,7 +153,7 @@
             </li>
 
 
-          
+
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCustomerService"
                    aria-expanded="true" aria-controls="collapseCustomerService">
@@ -443,7 +443,7 @@
             });
 
             //只查看退貨申請
-            $('#refundCheck').on('click', function () {              
+            $('#refundCheck').on('click', function () {
                 doSearch(0);
             });
 
@@ -568,10 +568,10 @@
         */
         function doSearch(curPage) {
             const employeeId = 1;
-           
+
             const post = {
                 keyword: $('#ticketSearchText').val(),
-                refundChecked: $('#refundCheck').prop('checked') ,
+                refundChecked: $('#refundCheck').prop('checked'),
                 employeeId: employeeId,
                 page: curPage,
                 size: 5,
@@ -584,7 +584,7 @@
             oldCondition = post;
 
             //發請求
-            fetch(`${getDomainName()}/bk/orders`, {  
+            fetch(`${getDomainName()}/bk/orders`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
