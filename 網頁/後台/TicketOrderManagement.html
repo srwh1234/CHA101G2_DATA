@@ -366,6 +366,7 @@
 
     <!-- 頁面級別的插件 -->
     <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/sweetalert/sweetalert.js"></script>
 
     <!-- 頁面級別的自訂腳本 -->
     <script src="js/demo/chart-area-demo.js"></script>
@@ -520,11 +521,20 @@
                 body: JSON.stringify(post),
             })
                 .then(response => response.json())
-                .then(data => { })
+                .then(data => {
+                    if (data) {
+                        Swal.fire({ icon: 'success', title: '已送出通知' });
+                    } else {
+                        Swal.fire({ icon: 'error', title: '系統發生錯誤' });
+                    }
+
+                })
                 .catch(error => console.log(error))
                 .finally(() => {
                     fetch_detail(post.orderId);
                     $('#checkRefundModal').modal('hide');
+
+
                 });
         }
 
