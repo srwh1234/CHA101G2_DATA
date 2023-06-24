@@ -412,6 +412,27 @@
                 <script src="js/demo/chart-area-demo.js"></script>
                 <script src="js/demo/chart-pie-demo.js"></script>
 
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        let table = new DataTable('#mytable', {
+                            ajax: function (d, cb) {
+                                fetch('http://localhost:8080/article/articles')
+                                    .then(response => response.json())
+                                    .then(data => cb(data));
+                            },
+                            columns: [
+                                { data: 'article.articleTypeId' },
+                                { data: 'article.articleTitle' },
+                                { data: 'article.memberName' },
+                                { data: 'article.articlePostContent' },
+                                { data: 'article.articlePostTime' },
+                                { data: 'articleViews' }
+                            ]
+                        });
+                    });
+                </script>
+
+    
 </body>
 
 </html>
