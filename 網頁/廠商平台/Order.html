@@ -174,7 +174,7 @@
                     </ul>
                 </nav>
 
-                <!-- TODO: -->
+               
                 <div class="container-fliud">
                     <div class="row">
                         <div class="table-responsive p-3" id="tourContainer">
@@ -236,7 +236,7 @@
                             sortClass: 'table-active',
                             search: true,
                             searchAlign: 'left',
-                            url: 'http://localhost:8080/vd/tourOrders',
+                            url: '/vd/tourOrders',
                             columns: [
                                 { field: 'tourGroupId', title: '旅遊團編號', "sortable": true },
                                 { field: 'tripName', title: '行程名稱', "sortable": true },
@@ -258,7 +258,7 @@
                                 sortClass: 'table-active',
                                 search: true,
                                 searchAlign: 'left',
-                                url: `http://localhost:8080/vd/order/${id}`,
+                                url: `/vd/order/${id}`,
                                 columns: [
                                     { field: 'tripOrderId', title: '訂單編號', "sortable": true },
                                     { field: 'memberName', title: '會員名稱', "sortable": true },
@@ -278,7 +278,7 @@
                         $(document).on('click', '.my-btn-ok', function () {
                             //出團
                             const id = $(this).closest('tr').find('td').first().text();
-                            fetch(`http://localhost:8080/vd/orderCheck/${id}/0`)
+                            fetch(`/vd/orderCheck/${id}/0`)
                                 .then(res => res.json())
                                 .then(data => {
                                     $('#tourContainer table').bootstrapTable('refresh');
@@ -291,7 +291,7 @@
                         $(document).on('click', '.my-btn-notok', function () {
                             //不出團
                             const id = $(this).closest('tr').find('td').first().text();
-                            fetch(`http://localhost:8080/vd/orderCheck/${id}/2`)
+                            fetch(`/vd/orderCheck/${id}/2`)
                                 .then(res => res.json())
                                 .then(data => {
                                     $('#tourContainer table').bootstrapTable('refresh');
